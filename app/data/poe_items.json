@@ -1,0 +1,84 @@
+{
+    "Currency": {
+        "Regular": [
+            "Mirror of Kalandra"
+            
+            , "Eternal Orb"
+            , "Exalted Orb"
+            , "Ancient Orb"
+            , "Divine Orb"
+            , "Gemcutter's Prism"
+            
+            , "Orb of Annulment"
+            , "Vaal Orb"
+            , "Orb of Regret"
+            , "Engineer's Orb"
+            , "Regal Orb"
+            
+            , "Orb of Fusing"
+            , "Orb of Scouring"
+            , "Orb of Alchemy"
+            , "Blessed Orb"
+            , "Orb of Binding"
+            
+            , "Silver Coin"
+            , "Jeweller's Orb"
+            , "Orb of Chance"
+            , "Orb of Alteration"
+            , "Chromatic Orb"
+            
+            , "Scroll of Wisdom"
+            , "Portal Scroll"
+            , "Armourer's Scrap"
+            , "Blacksmith's Whetstone"
+            , "Glassblower's Bauble"
+            
+            , "Orb of Transmutation"
+            , "Orb of Augmentation"
+            , "Perandus Coin"
+            , "Cartographer's Chisel"
+            , "Chaos Orb"
+            
+            , "Sextant"
+            , "Stacked Deck"
+            , "Harbinger's Orb"
+            , "Orb of Horizons"
+            , "Ancient Reliquary Key"
+            
+            , "Timeworn Reliquary Key"
+            , "Splinter"
+        ]
+    }
+    , "Card": {
+        "Regular": [
+            "The Doctor"
+            
+            , "Her Mask"
+            , "The Gambler"
+            , "The Carrion Crow"
+        ]
+    }
+    , "Gems": {
+        "Regular": [
+            "Empower"
+            
+            , "Enhance"
+            , "Enlighten"
+            , "Portal"
+            , "Vaal Breach"
+        ]
+    }
+    , "Equipment": {
+        "Regular": [
+            "Opal Ring"
+            
+            , "Steel Ring"
+            , "Crystal Belt"
+            , "Marble Amulet"
+            , "Blue Pearl Amulet"
+            , "Stygian Vise"
+            
+            , "Bone Helmet"
+        ]
+    }
+}

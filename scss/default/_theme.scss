@@ -1,0 +1,55 @@
+// Created by WareBare on 10/23/2016.
+
+$border-000: #000000;
+
+$backgroundColor-000: #202020;
+$backgroundColor-001: #404040;
+$backgroundColor-001b: #303030;
+$backgroundColor-002: #606060;
+
+$backgroundColor-003: #401F0C;
+$backgroundColor-004: #57371B;
+$backgroundColor-005: #67472B;
+
+$backgroundColor-006: #300F00;
+$backgroundColor-007: #482715;
+$backgroundColor-008: #502F1C;
+$backgroundColor-009: #583725;
+$backgroundColor-010: #603F2C;
+
+$fontColor-000: #AFAFAF;
+$fontColor-001: #B5A58A;
+$fontColor-001b: #C5B58B;
+$fontColor-002: #2F2F2F;
+
+$borderColor-ButtonHover: #555599;
+$borderColor-ButtonActive: #555599;
+
+$gradientBTN-000: linear-gradient($backgroundColor-000, $backgroundColor-001);
+$gradientBTN-000b: linear-gradient($backgroundColor-001, $backgroundColor-000);
+$gradientBTN-000c: linear-gradient($backgroundColor-001, $backgroundColor-002);
+$gradientBTN-001: linear-gradient($backgroundColor-003,$backgroundColor-003, $backgroundColor-004);
+$gradientBTN-001b: linear-gradient($backgroundColor-004,$backgroundColor-003, $backgroundColor-003);
+$gradientBTN-001c: linear-gradient($backgroundColor-003,$backgroundColor-004, $backgroundColor-005);
+
+$gradientBTN-nav000: linear-gradient(to right, $backgroundColor-006 , $backgroundColor-003);
+$gradientBTN-nav001: linear-gradient(to right, $backgroundColor-007 , $backgroundColor-008);
+$gradientBTN-nav002: linear-gradient(to right, $backgroundColor-009 , $backgroundColor-010);
+
+$gradientLabel-001: linear-gradient($backgroundColor-007 , $backgroundColor-009);
+
+$RadioColor01-Basic: #AFAFAF;
+$RadioColor01-Hover: #000000;
+$RadioColor01-Check: #000000;
+$RadioBGColor00: #482715;
+$RadioBGColor00b: #583725;
+$RadioBGColor01: #66AF66;
+$RadioBGColor02: #006600;
+$RadioBGColor03: #003300;
+$gradientInputRadio-Basic: linear-gradient($RadioBGColor00 , $RadioBGColor00b);
+$gradientInputRadio-Hover: linear-gradient($RadioBGColor02 , $RadioBGColor01);
+$gradientInputRadio-Check: linear-gradient($RadioBGColor03 , $RadioBGColor02);
+
+
+
+

@@ -1,0 +1,217 @@
+{
+    "Currency": {
+        "ItemGroup": "Currency"
+        , "ItemType": "Regular"
+        , "DefaultGroup": "Unspecified"
+        , "Groups": {
+            "Unspecified": {
+                "Settings": {}
+            }
+            , "Hidden": {
+                "bHidden": true
+                , "Items": [
+                
+                ]
+            }
+            , "T1": {
+                "Settings": {}
+                , "Items": [
+                    21
+                    , 22
+                ]
+            }
+            , "T2": {
+                "Settings": {}
+                , "Items": [
+                    23
+                    , 24
+                    , 26
+                    , 9
+                ]
+            }
+            , "T3": {
+                "Settings": {}
+                , "Items": []
+            }
+            , "T4": {
+                "Settings": {}
+                , "Items": [
+                    27
+                    , 25
+                    , 15
+                    , 28
+                ]
+            }
+            , "T5": {
+                "Settings": {}
+                , "Items": [
+                    32
+                ]
+            }
+            , "T6": {
+                "Settings": {}
+                , "Items": [
+                    16
+                    , 37
+                ]
+            }
+            , "T7": {
+                "Settings": {}
+                , "Items": [
+                ]
+            }
+            , "T8": {
+                "Settings": {
+                    "PlayAlertSound": "8 300"
+                }
+                , "Items": [
+                    19
+                    , 17
+                    , 20
+                    , 18
+                    , 14
+                ]
+            }
+            , "T9": {
+                "Settings": {}
+                , "Items": [
+                    8
+                    , 12
+                    , 7
+                    , 29
+                    , 5
+                    , 11
+                    , 30
+                    , 13
+                    , 10
+                    , 34
+                ]
+            }
+            , "T10": {
+                "Settings": {
+                    "PlayAlertSound": "8 300"
+                }
+                , "Items": [
+                    4
+                    , 6
+                    , 31
+                    , 33
+                ]
+            }
+            , "T11": {
+                "Settings": {
+                    "PlayAlertSound": "1 300"
+                }
+                , "Items": [
+                    2
+                    , 3
+                ]
+            }
+            , "T12": {
+                "Settings": {
+                    "PlayAlertSound": "1 300"
+                }
+                , "Items": [
+                    1
+                    , 0
+                    , 35
+                    , 36
+                ]
+            }
+        }
+    }
+    , "Card": {
+        "ItemGroup": "Card"
+        , "ItemType": "Regular"
+        , "DefaultGroup": "Unspecified"
+        , "Groups": {
+            "Unspecified": {
+                "Settings": {}
+            }
+            , "Hidden": {
+                "bHidden": true
+                , "Items": [
+                    3
+                ]
+            }
+            , "T4": {
+                "Settings": {}
+                , "Items": [
+                    1
+                    , 2
+                ]
+            }
+            , "T11": {
+                "DisplayName": "Top Tier",
+                "Settings": {}
+                , "Items": [
+                    0
+                ]
+            }
+        }
+    }
+    , "Gems": {
+        "ItemGroup": "Gems"
+        , "ItemType": "Regular"
+        , "DefaultGroup": "Unspecified"
+        , "Groups": {
+            "Unspecified": {
+                "Settings": {}
+            }
+            , "Hidden": {
+                "bHidden": true
+                , "Items": [
+                
+                ]
+            }
+            , "T4": {
+                "Settings": {}
+                , "Items": [
+                    1
+                    , 3
+                ]
+            }
+            , "T11": {
+                "DisplayName": "Top Tier",
+                "Settings": {}
+                , "Items": [
+                    0
+                    , 2
+                    , 4
+                ]
+            }
+        }
+    }
+    , "Default Equipment": {
+        "ItemGroup": "Equipment"
+        , "ItemType": "Regular"
+        , "DefaultGroup": "Unspecified"
+        , "Groups": {
+            "Unspecified": {
+                "Settings": {}
+            }
+            , "Hidden": {
+                "bHidden": true
+                , "Items": [
+                    3
+                    , 4
+                ]
+            }
+            , "T4": {
+                "Settings": {}
+                , "Items": [
+                    6
+                ]
+            }
+            , "T11": {
+                "DisplayName": "Top Tier",
+                "Settings": {}
+                , "Items": [
+                    0
+                    , 1
+                    , 2
+                ]
+            }
+        }
+    }
+}
