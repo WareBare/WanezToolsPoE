@@ -47,6 +47,21 @@
             
             , "Timeworn Reliquary Key"
             , "Splinter"
+            , "Transmutation Shard"
+            , "Horizon Shard"
+            , "Harbinger's Shard"
+            
+            , "Chaos Shard"
+            , "Alchemy Shard"
+            , "Binding Shard"
+            , "Alteration Shard"
+            , "Ancient Shard"
+            
+            , "Engineer's Shard"
+            , "Exalted Shard"
+            , "Mirror Shard"
+            , "Annulment Shard"
+            , "Regal Shard"
         ]
     }
     , "Card": {

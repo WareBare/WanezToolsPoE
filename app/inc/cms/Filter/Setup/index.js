@@ -1323,7 +1323,7 @@ module.exports = {
                     , MiniMapSize: `1`
                     , MiniMapColor: `Green`
                     , Code: {
-                        SetTextColor: `0 74 37 {ALPHA}`
+                        //SetTextColor: `0 74 37 {ALPHA}`
                     }
                 }
                 , Leveling: {
@@ -1740,6 +1740,9 @@ module.exports = {
         }
     
         Output += this.Print_CheckValue(`LeagueIncursion`);
+    
+        Output += `\nHide\n`;
+        Output += `    Class "Gem"\n`;
     
         Output += `\nHide\n`;
         Output += `    Rarity <= Rare\n`;
