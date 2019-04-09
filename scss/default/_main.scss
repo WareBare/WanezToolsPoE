@@ -869,6 +869,13 @@ wztip{
     //border-width: 2px;
     text-align: center;
 
+    ::-webkit-scrollbar-track{
+        background-color: rgba(74, 74, 74, 0.9);
+    }
+
+    ::-webkit-scrollbar-thumb{
+        background-color: rgba(27, 27, 27, 0.9);
+    }
     fieldset{
         text-align: left;
         display: inline-block;
@@ -927,6 +934,7 @@ wztip{
             font-size: 1em;
             padding: 2px 4px 1px 4px;
         }
+
 
         fieldset{
             display: inline-block;

@@ -792,7 +792,7 @@ module.exports = {
      */
     SelectionForm_CheckBox: function(InFieldName, InElementName, InOptions, InDefaults){
         let Output = ``, OptionsOutput = ``
-            , FieldTMP = `<fieldset><legend>{FIELD_NAME}</legend>{FIELD_OPTIONS}</fieldset>`
+            , FieldTMP = `<fieldset class="CheckValue"><legend>{FIELD_NAME}</legend>{FIELD_OPTIONS}</fieldset>`
             , OptionTMP = `<label><input name="{OPTION_NAME}" type="checkbox"{IS_CHECKED} onclick="_cms.OnClickCheckBox(this);" /><span class="Radio">{OPTION_TEXT}</span></label>`;
         
         for(let OptionIndex in InOptions){
@@ -812,7 +812,7 @@ module.exports = {
     },
     SelectionForm_RadioButton: function(InFieldName, InElementName, InOptions, InDefault = 0){
         let Output = ``, OptionsOutput = ``
-            , FieldTMP = `<fieldset><legend>{FIELD_NAME}</legend>{FIELD_OPTIONS}</fieldset>`
+            , FieldTMP = `<fieldset class="CheckValue"><legend>{FIELD_NAME}</legend>{FIELD_OPTIONS}</fieldset>`
             , OptionTMP = `<label><input name="{OPTION_NAME}" type="radio"{IS_CHECKED} onclick="_cms.OnClickRadioButton(this);" value="{OPTION_VALUE}"><span class="Radio">{OPTION_TEXT}</span></label>`;
     
         for(let OptionIndex in InOptions){
@@ -850,7 +850,7 @@ module.exports = {
         
         for(let ItemIndex in InOpt.Items){
             ItemData = InOpt.Items[ItemIndex];
-            if(ItemsOutput !== ``) ItemsOutput += `<br />`;
+            if(ItemsOutput !== `` && ItemData.bUseBreak) ItemsOutput += `<br />`;
             if(ItemData.bCheckBox){
                 /// Is CheckBox
                 ItemsOutput += this.SelectionForm_CheckBox(ItemData.FieldName, ItemData.ElementName, ItemData.Fields, (FilterData[ItemData.ElementName]) ? FilterData[ItemData.ElementName] : this.CheckValues[ItemData.ElementName].CurrentValue);
@@ -887,15 +887,17 @@ module.exports = {
                     , Fields: [`Hide All RGB`, `RGB (small space)`, `RGB (All)`]
                 }
                 , {
-                    FieldName: `Show Quality Gems`
+                    FieldName: `Show Gems`
                     , ElementName: `RecipesGem`
                     , bCheckBox: true
+                    , bUseBreak: true
                     , Fields: [`20%`, `14%+`, `10%+`, `8%+`, `5%+`, `Vaal Gems`, `Any Gem`]
                 }
                 , {
                     FieldName: `Chaos Recipe`
                     , ElementName: `RecipesChaos`
                     , bCheckBox: false
+                    , bUseBreak: true
                     , Fields: [`Hide`, `Show`]
                 }
             ]
@@ -911,7 +913,7 @@ module.exports = {
                     , Fields: [`Hide`, `Show`]
                 }
                 , {
-                    FieldName: `Leveling Equipment (should be hidden for grind filters to improve performance)`
+                    FieldName: `Leveling Equipment`
                     , ElementName: `MiscLevelingGear`
                     , bCheckBox: false
                     , Fields: [`Hide`, `Show`]
