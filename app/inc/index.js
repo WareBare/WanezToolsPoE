@@ -177,4 +177,21 @@ UseMarkdownParsing = function(FileName, HeaderStr, ContainerClass = `md_changelo
     
     return `<div id="${ContainerClass}" class="md">${out_}</div>`;
 };
-
+UseMarkdownParsingOnURL = function(InURL, InHeaderStr, InContainerClass = `md_changelog`){
+    let outHTML = ``;
+    
+    fetchUrl(`${InURL}`, function(error, meta, body){
+            outHTML = marked(
+                `# ${InHeaderStr}\r\n` +
+                `\r\n---\r\n` +
+                `# Table of Contents\r\n` +
+                markdown_toc(body.toString()).content +
+                `\r\n---\r\n`
+                );
+            document.getElementById(`${InContainerClass}`).innerHTML = outHTML;
+            document.getElementById(`${InContainerClass}`).innerHTML += SanitizeLinks(marked(body.toString()));
+        }
+    );
+    
+    return `<div id="${InContainerClass}" class="md">Loading...</div>`;
+};

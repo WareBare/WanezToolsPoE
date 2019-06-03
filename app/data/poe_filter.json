@@ -63,7 +63,9 @@
                 ]
             }
             , "T7": {
-                "Settings": {}
+                "Settings": {
+                    "PlayAlertSound": "8 300"
+                }
                 , "Items": [
                 ]
             }
@@ -82,7 +84,9 @@
                 ]
             }
             , "T9": {
-                "Settings": {}
+                "Settings": {
+                    "PlayAlertSound": "8 300"
+                }
                 , "Items": [
                     8
                     , 12
@@ -162,13 +166,17 @@
             }
             , "T3": {
                 "DisplayName": ""
-                , "Settings": {}
+                , "Settings": {
+                
+                }
                 , "Items": [
                 
                 ]
             }
             , "T4": {
-                "Settings": {}
+                "Settings": {
+                
+                }
                 , "Items": [
                     1
                     , 2
@@ -176,56 +184,72 @@
             }
             , "T5": {
                 "DisplayName": ""
-                , "Settings": {}
+                , "Settings": {
+                
+                }
                 , "Items": [
                 
                 ]
             }
             , "T6": {
                 "DisplayName": ""
-                , "Settings": {}
+                , "Settings": {
+                
+                }
                 , "Items": [
                 
                 ]
             }
             , "T7": {
                 "DisplayName": ""
-                , "Settings": {}
+                , "Settings": {
+                    "PlayAlertSound": "5 300"
+                }
                 , "Items": [
                 
                 ]
             }
             , "T8": {
                 "DisplayName": ""
-                , "Settings": {}
+                , "Settings": {
+                    "PlayAlertSound": "5 300"
+                }
                 , "Items": [
                 
                 ]
             }
             , "T9": {
                 "DisplayName": ""
-                , "Settings": {}
+                , "Settings": {
+                    "PlayAlertSound": "5 300"
+                }
                 , "Items": [
                 
                 ]
             }
             , "T10": {
                 "DisplayName": ""
-                , "Settings": {}
+                , "Settings": {
+                    "PlayAlertSound": "5 300"
+                }
                 , "Items": [
                 
                 ]
             }
             , "T11": {
                 "DisplayName": "",
-                "Settings": {}
+                "Settings": {
+                    "PlayAlertSound": "5 300"
+                }
                 , "Items": [
                 
                 ]
             }
             , "T12": {
                 "DisplayName": "Top Tier"
-                , "Settings": {}
+                , "Settings": {
+                    "PlayAlertSound": "5 300"
+                }
                 , "Items": [
                     0
                     , 4
@@ -304,7 +328,9 @@
             }
             , "T11": {
                 "DisplayName": "Top Tier",
-                "Settings": {}
+                "Settings": {
+                    "PlayAlertSound": "6 300"
+                }
                 , "Items": [
                     0
                     , 2

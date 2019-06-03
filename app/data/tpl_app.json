@@ -11,7 +11,8 @@
                 "News":[]
             },
             "Filter":{
-                "Setup":[]
+                "Settings": []
+                , "Setup":[]
             }
         },
         "Disabled":{

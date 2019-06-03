@@ -10,6 +10,24 @@ module.exports = {
     aFilters: [],
     SettingsPath: false,
     
+
+
+    Init: function()
+    {
+        // ---
+        if(!this.SettingsPath){
+            this.SettingsPath = this.FilterSettings.path.replace(/\\/g,`/`).replace(`/filter-settings.json`, ``);
+            
+        }
+        this.LoadSettingsFiles();
+    },
+    OnLoad: function()
+    {
+        // ---
+    },
+
+
+
     LoadSettingsFiles: function()
     {
         let PotentialSettingsFiles = wzIO.dir_get_contentsSync(this.SettingsPath, true);
@@ -26,7 +44,8 @@ module.exports = {
         
     },
     
-    LoadFilters: function(){
+    LoadFilters: function()
+    {
         //wzIO.dir_get_contentsSync(this.SettingsPath, true);
     
         let mFiles = wzIO.dir_get_contentsSync(this.FilterSettings.get(`Path`), true),
@@ -41,13 +60,8 @@ module.exports = {
         console.log(mFilterFiles);
     },
     
-    ini: function()
-    {
-        if(!this.SettingsPath){
-            this.SettingsPath = this.FilterSettings.path.replace(/\\/g,`/`).replace(`/filter-settings.json`, ``);
-            
-        }
-        this.LoadSettingsFiles();
+    ini: function(){
+        this.Init();
     },
     
     LoadContent: function(InContentType)
@@ -126,14 +140,16 @@ module.exports = {
         return mList;
     },
     
-    content_: function(){
+    content_: function()
+    {
         let out_ = '';
         
         out_ = '';
         
         return out_;
     },
-    sidebar_: function(){
+    sidebar_: function()
+    {
         
         let out_ = '';
         

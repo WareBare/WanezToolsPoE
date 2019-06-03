@@ -683,6 +683,17 @@ module.exports = {
         }
     },
     
+
+    
+    Init: function(){
+        // ---
+    },
+    OnLoad: function(){
+        // ---
+    },
+
+
+
     //FilterConfig: new eConfig({name: `filter-settings`}),
     GenerateFormData_Main: function(InGroupType, InData, InDataString)
     {

@@ -3,7 +3,8 @@
  */
 
 _cms = false;
-//noinspection JSUnresolvedVariable
+Super = _cms.Base; // simulating C++ Inheritance for module content (force of habit)
+
 /**
  * loads content from a js function
  * @param {Array} $optCMS
@@ -11,21 +12,6 @@ _cms = false;
  */
 wzCMS = function($optCMS,$formData){
     wzLoadingCMS(true);
-    
-    if(JSON.stringify(appConfig.get('cms')) !== JSON.stringify($optCMS) || !_cms){
-        //console.log(`load new content`);
-        //console.log(_watcher);
-        /*
-        if(_watcher){
-            _watcher.close();
-            //console.log(_cms._watcher);
-            _watcher = false;
-        }
-        */
-    }else{
-        //console.log(`reload old content`);
-        
-    }
     
     $formData = $formData || false; // if form - loadForm will have all the form data
     const navClassInActive = 'navInActive',
@@ -52,6 +38,7 @@ wzCMS = function($optCMS,$formData){
         //const cmsBase = require(pathBase);
         const cms = require(path); // load file
         _cms = cms;
+        Super = _cms;
         if($formData){ // check if $formData has form data or false (if form data is available it is a form validation)
             //cms.Forms
             //console.log($formData.id.split("::")[0]);
@@ -68,11 +55,20 @@ wzCMS = function($optCMS,$formData){
             }
             try{
                 cms.Base = require(pathBase+'/_Base.js');
+
+                Super = _cms.Base;
+                if(!cms.Base.bInitialized && cms.Base.Init){
+                    cms.Base.Init();
+                    cms.Base.bInitialized = true;
+                }
+                if(cms.Base.OnLoad) cms.Base.OnLoad();
+
                 cms.Base.loadContent = function($contentType,$contentParams){
                     $contentType = $contentType || false;
                     $contentParams = $contentParams || false;
                     contentEl.innerHTML = cms.content_($contentType,$contentParams) || headerTitle_;
                     //wzLoadingCMS(false);
+                    tipWZ.Init();
                 };
                 cms.Base.loadSideBar = function(){
                     sidebarEl.innerHTML = (cms.sidebar_) ? cms.sidebar_() : wzSideBarDefault(( (cms.sidebarBtns_) ? cms.sidebarBtns_() : false ), ( (cms.sidebarList_) ? cms.sidebarList_() : false ),( (cms.contentType) ? cms.contentType : false ),( (cms.tplSideBar) ? cms.tplSideBar : false ));
@@ -88,28 +84,37 @@ wzCMS = function($optCMS,$formData){
                     }, 10);
                     //this.loadContent($contentType,$contentParams);
                 };
-                cms.Base.ini();
+
+                //Log(`finished`);
+
             }catch(err){}
             cms.Elements = {
                 Content: contentEl,
                 SideBar: sidebarEl,
                 HeaderLoc: headerLocEl
             };
+
+            if(!cms.bInitialized && cms.Init){
+                cms.Init();
+                cms.bInitialized = true;
+            }
+            if(cms.OnLoad) cms.OnLoad();
+
             setTimeout(function(){
                 headerLocEl.innerHTML = headerTitle_;
                 contentEl.innerHTML = cms.content_() || headerTitle_;
                 sidebarEl.innerHTML = (cms.sidebar_) ? cms.sidebar_() : wzSideBarDefault(( (cms.sidebarBtns_) ? cms.sidebarBtns_() : false ), ( (cms.sidebarList_) ? cms.sidebarList_() : false ),( (cms.contentType) ? cms.contentType : false ),( (cms.tplSideBar) ? cms.tplSideBar : false ));
                 //wzLoadingCMS(false);
+                //AddToolTips();
+                tipWZ.Init();
             }, 10);
             //headerLocEl.innerHTML = headerTitle_;
             //contentEl.innerHTML = cms.content_() || headerTitle_;
             //sidebarEl.innerHTML = (cms.sidebar_) ? cms.sidebar_() : wzSideBarDefault(( (cms.sidebarBtns_) ? cms.sidebarBtns_() : false ), ( (cms.sidebarList_) ? cms.sidebarList_() : false ),( (cms.contentType) ? cms.contentType : false ),( (cms.tplSideBar) ? cms.tplSideBar : false ));
         }
-        
     }catch(err){
         console.error(err);
     }
-    
 };
 wzSideBarDefault = function($btns_,$list_,$contentType,$tpl){
     $btns_ = appData.tpl.Buttons.Default.wzParseTPL($btns_) || ``;
@@ -177,16 +182,6 @@ wzLoadingCMS = function(bInStartLoading){
     }else{
         //console.log(`Finish Loading`);
         LoadingScreen = document.getElementById(`wzLoadingScreen`);
-        
         document.body.removeChild(LoadingScreen);
     }
-};
-
-wzWatcherCMS = function($setTimeout){
-    $setTimeout = $setTimeout || 10;
-    
-    if(_cms.WatcherUpdate) wzReloadCMS($setTimeout);
-    
-    _cms.WatcherUpdate = false;
-    
 };

@@ -1,0 +1,209 @@
+{
+    "Filter": {
+        "Classification": {
+            "Unspecified": {
+                "Alpha": "255"
+                , "MiniMapSize": "1"
+                , "MiniMapColor": "Green"
+                , "Code": {
+                    "SetBackgroundColor": "0 37 0 {ALPHA}"
+                }
+            }
+            , "T1": {
+                "Alpha": "155"
+                , "Code": {
+                    "SetFontSize": "25"
+                    , "SetBackgroundColor": "74 37 74 {ALPHA}"
+                }
+            }
+            , "T2": {
+                "Alpha": "255"
+                , "Code": {
+                    "SetFontSize": "25"
+                    , "SetBackgroundColor": "74 37 74 {ALPHA}"
+                }
+            }
+            , "T3": {
+                "Alpha": "255"
+                , "MiniMapSize": "2"
+                , "MiniMapColor": "White"
+                , "Code": {
+                    "SetBackgroundColor": "74 74 74 {ALPHA}"
+                }
+            }
+            , "T4": {
+                "Alpha": "255"
+                , "MiniMapSize": "1"
+                , "MiniMapColor": "White"
+                , "Code": {
+                    "SetBackgroundColor": "74 74 74 {ALPHA}"
+                }
+            }
+            , "T5": {
+                "Alpha": "255"
+                , "MiniMapSize": "2"
+                , "MiniMapColor": "Yellow"
+                , "Code": {
+                    "SetBackgroundColor": "74 74 37 {ALPHA}"
+                }
+            }
+            , "T6": {
+                "Alpha": "255"
+                , "MiniMapSize": "1"
+                , "MiniMapColor": "Yellow"
+                , "Code": {
+                    "SetFontSize": "45"
+                    , "SetBackgroundColor": "74 74 37 {ALPHA}"
+                }
+            }
+            , "T7": {
+                "Alpha": "255"
+                , "MiniMapSize": "2"
+                , "MiniMapColor": "Brown"
+                , "Code": {
+                    "SetBackgroundColor": "74 37 0 {ALPHA}"
+                }
+            }
+            , "T8": {
+                "Alpha": "255"
+                , "MiniMapSize": "1"
+                , "MiniMapColor": "Brown"
+                , "Code": {
+                    "SetFontSize": "45"
+                    , "SetBackgroundColor": "74 37 0 {ALPHA}"
+                }
+            }
+            , "T9": {
+                "Alpha": "255"
+                , "MiniMapSize": "1"
+                , "MiniMapColor": "Red"
+                , "Code": {
+                    "SetFontSize": "45"
+                    , "SetBackgroundColor": "74 0 0 {ALPHA}"
+                }
+            }
+            , "T10": {
+                "Alpha": "255"
+                , "MiniMapSize": "0"
+                , "MiniMapColor": "Red"
+                , "Code": {
+                    "SetFontSize": "45"
+                    , "SetBackgroundColor": "74 0 0 {ALPHA}"
+                }
+            }
+            , "T11": {
+                "Alpha": "255"
+                , "MiniMapSize": "1"
+                , "MiniMapColor": "Blue"
+                , "Code": {
+                    "SetFontSize": "45"
+                    , "SetBackgroundColor": "37 37 74 {ALPHA}"
+                }
+            }
+            , "T12": {
+                "Alpha": "255"
+                , "MiniMapSize": "0"
+                , "MiniMapColor": "Blue"
+                , "Code": {
+                    "SetFontSize": "45"
+                    , "SetBackgroundColor": "37 37 74 {ALPHA}"
+                }
+            }
+            , "FlaskLife": {
+                "Alpha": "255"
+                , "Code": {
+                    "SetBackgroundColor": "74 37 37 {ALPHA}"
+                }
+            }
+            , "FlaskMana": {
+                "Alpha": "255"
+                , "Code": {
+                    "SetBackgroundColor": "0 37 74 {ALPHA}"
+                }
+            }
+            , "FlaskUtility": {
+                "Alpha": "255"
+                , "Code": {
+                    "SetBackgroundColor": "0 74 37 {ALPHA}"
+                }
+            }
+            , "League": {
+                "Alpha": "255"
+                , "MiniMapSize": "1"
+                , "MiniMapColor": "Green"
+                , "Code": {}
+            }
+            , "Leveling": {
+                "Alpha": "255"
+                , "Code": {
+                    "SetBackgroundColor": "0 0 37 {ALPHA}"
+                }
+            }
+            , "Custom": {
+                "Alpha": "255"
+                , "Code": {}
+            }
+        }
+        , "MiniMapIcons": {
+            "Currency": "Diamond"
+            , "Card": "Square"
+            , "Map": "Triangle"
+            , "Fragments": "Triangle"
+            , "Equipment": "Star"
+            , "Recipe": "Hexagon"
+            , "Armor": "Star"
+            , "Weapon": "Star"
+            , "Amulet": "Star"
+            , "Ring": "Star"
+            , "Belt": "Star"
+            , "Off-hand": "Star"
+            , "Gems": "Circle"
+            , "Jewel": "Circle"
+            , "League":  "Hexagon"
+            , "Incursion Item": "Hexagon"
+        }
+        , "ColorPerType": {
+            "Currency": {
+                "SetTextColor": "125 225 225 {ALPHA}"
+                , "SetBorderColor": "225 125 225 {ALPHA}"
+            }
+            , "Card": {
+                "SetBorderColor": "125 125 225 {ALPHA}"
+            }
+            , "Map": {
+                "SetBorderColor": "225 125 125 {ALPHA}"
+            }
+            , "Flask": {
+                "SetBorderColor": "205 205 205 {ALPHA}"
+            }
+            , "Recipe": {
+                "SetBackgroundColor": "37 0 37 {ALPHA}"
+                , "SetBorderColor": "125 225 225 {ALPHA}"
+            }
+            , "Equipment": {
+                "SetBackgroundColor": "0 0 37 {ALPHA}"
+                , "SetBorderColor": "55 155 255 {ALPHA}"
+            }
+            , "Gems": {
+                "SetBackgroundColor": "0 37 37 {ALPHA}"
+                , "SetBorderColor": "55 255 155 {ALPHA}"
+            }
+            , "Jewel": {
+                "SetBackgroundColor": "0 37 37 {ALPHA}"
+                , "SetBorderColor": "55 255 155 {ALPHA}"
+            }
+            , "League": {
+                "SetBackgroundColor": "0 74 37 {ALPHA}"
+                , "SetBorderColor": "55 255 155 {ALPHA}"
+            }
+            , "Amulet": {
+                "SetBackgroundColor": "0 74 37 {ALPHA}"
+                , "SetBorderColor": "55 255 155 {ALPHA}"
+            }
+            , "Incursion Item": {
+                "SetBackgroundColor": "37 0 37 {ALPHA}"
+                , "SetBorderColor": "225 125 225 {ALPHA}"
+            }
+        }
+    }
+}

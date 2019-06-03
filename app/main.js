@@ -2,8 +2,109 @@
  * Created by WareBare on 8/22/2016.
  */
 
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, dialog} = require('electron');
 const {} = require('electron');
+const { autoUpdater }  = require("electron-updater");
+
+const ipc = require('electron').ipcMain;
+//AppUpdater = require(`./updater.js`);
+// Put the next line within the window creation function
+
+let PeriodicChecker = setInterval(() => {
+    autoUpdater.checkForUpdates();
+  }, 600000); // 3600000
+
+class AppUpdater {
+    constructor() {
+        //log.transports.file.level = 'info';
+        //autoUpdater.logger = log;
+        //autoUpdater.checkForUpdatesAndNotify();
+
+        ipc.on('quitAndInstall', function(event, data){
+            autoUpdater.quitAndInstall();
+            setTimeout(() => app.quit(), 1000);
+        });
+
+        autoUpdater.checkForUpdates();
+
+        //autoUpdater.on('update-available', this.OnUpdateAvailable);
+        //autoUpdater.on('update-not-available', this.OnUpdateNotAvailable);
+        //autoUpdater.on('update-downloaded', this.OnUpdateDownloaded);
+
+        autoUpdater.on('update-available', () => {
+            clearInterval(PeriodicChecker);
+            ipc.on('invokeActionAvailable', function(event, data){
+                event.sender.send('updateAvailable', data);
+            });
+        });
+        autoUpdater.on('update-not-available', () => {
+            ipc.on('invokeActionUnavailable', function(event, data){
+                event.sender.send('updateNotAvailable', `data`);
+            });
+        });
+        autoUpdater.on('update-downloaded', (InInfo) => {
+            clearInterval(PeriodicChecker);
+            ipc.on('invokeActionReady', function(event, data){
+                event.sender.send('updateDownloaded', InInfo);
+            });
+        });
+        autoUpdater.on('error', (ev, err) => {
+            //event.sender.send('updateError', err);
+            
+            ipc.on('invokeActionError', function(event, data){
+                event.sender.send('updateError', err);
+            });
+        });
+    }
+
+
+    OnUpdateAvailable(){
+        clearInterval(PeriodicChecker);
+        
+        ipc.on('invokeActionAvailable', function(event, data){
+            //let result = processData(data);
+            event.sender.send('updateAvailable', data);
+        });
+    }
+
+    OnUpdateNotAvailable(){
+        ipc.on('invokeActionUnavailable', function(event, data){
+            //let result = processData(data);
+            event.sender.send('updateNotAvailable', `data`);
+        });
+    }
+
+    OnUpdateDownloaded(event, InInfo){
+        clearInterval(PeriodicChecker);
+
+        ipc.on('invokeActionReady', function(event, data){
+            //let result = processData(data);
+            event.sender.send('updateDownloaded', InInfo.version);
+        });
+
+        /*
+        dialog.showMessageBox({
+            title: 'Update Ready to Install',
+            message: 'Update has been downloaded',
+            buttons: [
+                'Install Later',
+                'Install Now'
+            ],
+            defaultId: 1
+        }, (response) => {
+            if (response === 0) {
+                dialog.showMessageBox({
+                    title: 'Installing Later',
+                    message: 'Update will be installed when you exit the app'
+                });
+            } else {
+                autoUpdater.quitAndInstall();
+                setTimeout(() => app.quit(), 1000);
+            }
+        });
+        */
+    }
+}
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -17,14 +118,23 @@ function createWindow () {
         minHeight: 600,
         minWidth: 860,
         backgroundColor: '#202020'
+        //, useContentSize: true
+        , webPreferences: {
+            //preload: path.join(app.getAppPath(), 'app/main.js')
+            nodeIntegration: true
+            , allowEval: false
+            , contextIsolation: false
+        }
     });
 
     win.maximize();
+    if(app.getName() !== `Electron`) win.setMenu(null);
 
     // and load the index.html of the app.
     win.loadURL(`file://${__dirname}/index.html`);
 
     // Open the DevTools.
+    if(app.getName() === `Electron`) win.webContents.openDevTools();
     //win.webContents.openDevTools();
 
     // Emitted when the window is closed.
@@ -35,6 +145,7 @@ function createWindow () {
         win = null;
     });
     
+    if(app.getName() !== `Electron`) new AppUpdater();
 }
 
 // This method will be called when Electron has finished
@@ -67,3 +178,5 @@ app.on('asynchronous-message', (event, arg) => {
     console.log(arg);  // prints "ping"
     event.sender.send('asynchronous-reply', 'pong');
 });
+
+

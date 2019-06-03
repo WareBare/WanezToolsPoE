@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Wanez :: Filter Tools - PoE</title>
+    <script src="libs/moment.js"></script>
+    <link rel="stylesheet" href="themes/default.css" type="text/css">
+</head>
+<body>
+Loading...
+<script>
+
+    const DocToolVersion = `0.0.3 (ALPHA)`
+        , DocPoEVersion = `3.6 (Synthesis)`
+        , DocDate = `2019-04-11`;
+
+    const fs = require(`fs-extra`);
+    const eConfig = require('electron-config');
+    const app = require('electron').remote.app;
+
+    let Log = console.log.bind(console);
+    const dirBase = __dirname.replace(/\\/g, "/"),
+        dirAssets = `${dirBase}/assets`;
+
+    const markdown_toc = require('markdown-toc');
+    const marked = require('marked');
+
+    let libWZ;
+    const wzIO = require(`./libs/wzIO`),
+        wzNotify = require(`./libs/wzNotify`);
+    const appData = require(`./data`);
+    const WZ = require(`./libs/Wanez`);
+    require(`./inc`);
+    require('./updater.js');
+</script>
+</body>
+</html>

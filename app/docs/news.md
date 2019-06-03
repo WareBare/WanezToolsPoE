@@ -7,6 +7,19 @@ There is no intention to make this a public thing, it is only intended to be use
 ---
 
 # Changelog
+
+## 0.0.3 - Sounds & Colors
+
+### BugFixes
+
+* Default Alert-Sound added to Divination Cards (T7-T12)
+* Default Alert-Sound added to Currency (T7, T9)
+* Default Alert-Sound added to Gems (T11)
+
+## New Features
+
+
+
 ## 0.0.2 - Phase #2
 ### BugFixes
 
