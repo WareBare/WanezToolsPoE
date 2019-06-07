@@ -7,6 +7,11 @@
  *
  */
 
+
+const VERSION_TOOL = `0.0.3 (ALPHA)`;
+const VERSION_POE = `3.7 (Legion)`;
+const DATETIME_TOOL = `2019-06-07`;
+
 module.exports = {
     Forms:{},
     tplContent: {},
@@ -364,6 +369,22 @@ module.exports = {
             }
             , CurrentValue: [true, true]
         }
+        , LeagueLegion: {
+            Class: `Incubator`
+            , Settings: [
+                {}
+                , {
+                    Classification: `League`
+                    , Code: {
+                    
+                    }
+                }
+            ]
+            , Code: {
+                BaseType: `"Incubator"`
+            }
+            , CurrentValue: 1
+        }
         , LeagueEssence: {
             Class: `Currency`
             , Settings: [
@@ -438,7 +459,7 @@ module.exports = {
                 , {
                     Classification: `League`
                     , Code: {
-                        BaseType: `"Blessing" "Breachstone"`
+                        BaseType: `"Blessing" "Breachstone" "Emblem"`
                     }
                 }
             ]
@@ -684,7 +705,7 @@ module.exports = {
     },
     
 
-    
+
     Init: function(){
         // ---
     },
@@ -804,7 +825,7 @@ module.exports = {
     SelectionForm_CheckBox: function(InFieldName, InElementName, InOptions, InDefaults){
         let Output = ``, OptionsOutput = ``
             , FieldTMP = `<fieldset class="CheckValue"><legend>{FIELD_NAME}</legend>{FIELD_OPTIONS}</fieldset>`
-            , OptionTMP = `<label><input name="{OPTION_NAME}" type="checkbox"{IS_CHECKED} onclick="_cms.OnClickCheckBox(this);" /><span class="Radio">{OPTION_TEXT}</span></label>`;
+            , OptionTMP = `<label class="CheckBox"><input name="{OPTION_NAME}" type="checkbox"{IS_CHECKED} onclick="_cms.OnClickCheckBox(this);" /><span>{OPTION_TEXT}</span></label>`;
         
         for(let OptionIndex in InOptions){
             OptionsOutput += OptionTMP.wzReplace({
@@ -824,7 +845,7 @@ module.exports = {
     SelectionForm_RadioButton: function(InFieldName, InElementName, InOptions, InDefault = 0){
         let Output = ``, OptionsOutput = ``
             , FieldTMP = `<fieldset class="CheckValue"><legend>{FIELD_NAME}</legend>{FIELD_OPTIONS}</fieldset>`
-            , OptionTMP = `<label><input name="{OPTION_NAME}" type="radio"{IS_CHECKED} onclick="_cms.OnClickRadioButton(this);" value="{OPTION_VALUE}"><span class="Radio">{OPTION_TEXT}</span></label>`;
+            , OptionTMP = `<label class="CheckBox"><input name="{OPTION_NAME}" type="radio"{IS_CHECKED} onclick="_cms.OnClickRadioButton(this);" value="{OPTION_VALUE}"><span>{OPTION_TEXT}</span></label>`;
     
         for(let OptionIndex in InOptions){
             OptionsOutput += OptionTMP.wzReplace({
@@ -1354,6 +1375,7 @@ module.exports = {
             }
             , MiniMapIcons = {
                 Currency: `Diamond`
+                , Incubator: `Diamond`
                 , Card: `Square`
                 , Map: `Triangle`
                 , Fragments: `Triangle`
@@ -1372,6 +1394,11 @@ module.exports = {
             }
             , ColorPerType = {
                 Currency: {
+                    //SetBackgroundColor: `37 0 37 {ALPHA}`
+                    SetTextColor: `125 225 225 {ALPHA}`
+                    , SetBorderColor: `225 125 225 {ALPHA}`
+                }
+                , Incubator: {
                     //SetBackgroundColor: `37 0 37 {ALPHA}`
                     SetTextColor: `125 225 225 {ALPHA}`
                     , SetBorderColor: `225 125 225 {ALPHA}`
@@ -1492,17 +1519,17 @@ module.exports = {
     
         Output += `# -------------------------------------------------------------------------------\n`;
         Output += `# ${this.Base.contentType}.FILTER\n`;
-        Output += `# @Date ${moment().format('MMMM Do YYYY, h:mm:ss a')}\n`;
+        Output += `# @Created ${moment().format('MMMM Do YYYY, h:mm:ss a')}\n`;
         Output += `# -------------------------------------------------------------------------------\n`;
         Output += `# Generated Filter File\n`;
         Output += `# -------------------------------------------------------------------------------\n`;
         Output += `# Tool Information\n`;
         Output += `# *****************\n`;
-        Output += `# @Link github.com\n`;
+        Output += `# @Link https://github.com/WareBare/WanezToolsPoE\n`;
         Output += `# @Author WareBare\n`;
-        Output += `# @Version ${DocToolVersion}\n`;
-        Output += `# @VersionPoE ${DocPoEVersion}\n`;
-        Output += `# @Date ${DocDate}\n`;
+        Output += `# @Version ${VERSION_TOOL}\n`;
+        Output += `# @VersionPoE ${VERSION_POE}\n`;
+        Output += `# @Date ${DATETIME_TOOL}\n`;
         Output += `# -------------------------------------------------------------------------------\n\n`;
         
         return Output;
@@ -1695,6 +1722,14 @@ module.exports = {
         
         // -- TOP_COMMENT -- \\
         Output += this.Print_TopComment();
+
+        // -- TEMP_NEW_LEAGUE -- \\ Incubators
+        //Output += `\nShow\n`;
+        //Output += `    Rarity <= Rare\n`;
+        //Output += `    ItemLevel < 20\n`;
+        //Output += `    SetBackgroundColor 0 0 37 175\n`;
+        //Output += `    SetBorderColor 55 155 255 175\n`;
+        Output += this.Print_CheckValue(`LeagueLegion`);
     
         // -- LEAGUE -- \\
         Output += this.Print_CheckValue(`LeagueEssence`);
@@ -1769,7 +1804,7 @@ module.exports = {
         
         
         if(this.Base.FilterSettings.has(`Path`)){
-            wzIO.file_put_contents(`${this.Base.FilterSettings.get(`Path`)}\\wzTool_${this.Base.contentType}.filter`, Output);
+            wzIO.file_put_contents(`${this.Base.FilterSettings.get(`Path`)}/${this.Base.contentType}.filter`, Output);
         }
         //Log(Output);
     },

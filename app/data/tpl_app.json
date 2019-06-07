@@ -7,16 +7,17 @@
         "ID": "app_Nav",
         "CONTENT": "myNav",
         "Items":{
-            "Home":{
-                "News":[]
+            "News":{
+                "Change Log":[]
             },
             "Filter":{
-                "Settings": []
-                , "Setup":[]
+                "Setup":[]
             }
         },
         "Disabled":{
             "Items":{
+                "Settings": []
+                , 
                 "Equipment":[],
                 "Sets":[],
                 "Runes":[],
