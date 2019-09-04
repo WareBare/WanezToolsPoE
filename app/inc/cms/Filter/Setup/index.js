@@ -1222,6 +1222,15 @@ module.exports = {
                         SetBackgroundColor: `0 37 0 {ALPHA}`
                     }
                 }
+                , Unspecified2: {
+                    Alpha: `255`
+                    , MiniMapSize: `1`
+                    , MiniMapColor: `Green`
+                    , Code: {
+                        //SetTextColor: `125 225 125 {ALPHA}`
+                        SetBackgroundColor: `0 37 0 {ALPHA}`
+                    }
+                }
                 , T1: {
                     Alpha: `155`
                     , Code: {
@@ -1444,7 +1453,7 @@ module.exports = {
                 }
             }
             , KeywordOrder = [
-                `LinkedSockets`, `Sockets`, `StackSize`, `Quality`, `Identified`, `SocketGroup`, `Height`, `Width`, `ElderItem`, `ShaperItem`, `FracturedItem`, `SynthesisedItem`, `ShapedMap`, `MapTier`, `DropLevel`, `Class`, `BaseType`, `Rarity`, `HasExplicitMod`, `AnyEnchantment`, `ItemLevel`
+                `LinkedSockets`, `Sockets`, `StackSize`, `Quality`, `Identified`, `SocketGroup`, `Height`, `Width`, `ElderItem`, `ShaperItem`, `FracturedItem`, `SynthesisedItem`, `ShapedMap`, `BlightedMap`, `MapTier`, `DropLevel`, `Class`, `BaseType`, `Rarity`, `HasExplicitMod`, `AnyEnchantment`, `ItemLevel`
                 , `SetFontSize`, `SetTextColor`, `SetBackgroundColor`, `SetBorderColor`, `DisableDropSound`, `PlayAlertSound`, `MinimapIcon`, `PlayEffect`
             ];
         
@@ -1542,6 +1551,9 @@ module.exports = {
             }
             , Unspecified: {
                 ShapedMap: `True`
+            }
+            , Unspecified2: {
+                BlightedMap: `True`
             }
             , T12: {
                 MapTier: `>= 16`

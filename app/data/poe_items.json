@@ -62,6 +62,8 @@
             , "Mirror Shard"
             , "Annulment Shard"
             , "Regal Shard"
+
+            , "Oil"
         ]
     }
     , "Card": {
@@ -383,6 +385,29 @@
             , "Dark Dreams"
             , "Buried Treasure"
             , "Demigod's Wager"
+            , "The Old Man"
+            , "Nook's Crown"
+            
+            , "The Side Quest"
+            , "The Price of Loyalty"
+            , "The Heroic Shot"
+            , "Remembrance"
+            , "More is Never Enough"
+            
+            , "Vile Power"
+            , "The Bargain"
+            , "Azyran's Reward"
+            , "The Skeleton"
+            , "The Eye of Terror"
+            
+            , "The Demon"
+            , "Akil's Prophecy"
+            , "The Damned"
+            , "Void of the Elements"
+            , "The Deal"
+            
+            , "The Wolf's Legacy"
+            , "The Mountain"
         ]
     }
     , "Gems": {
@@ -406,6 +431,9 @@
             , "Stygian Vise"
             
             , "Bone Helmet"
+            , "Vermillion Ring"
+            , "Cerulean Ring"
+            , "Convoking Wand"
         ]
     }
 }
