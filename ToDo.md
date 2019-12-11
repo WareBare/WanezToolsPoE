@@ -11,3 +11,4 @@
 * ***Updated:*** New Base Item Types (set to highest Tier)
   * 2 New Rings
   * 1 New Wand (for Summoners)
+

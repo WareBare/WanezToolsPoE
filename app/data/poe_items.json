@@ -64,6 +64,8 @@
             , "Regal Shard"
 
             , "Oil"
+            , "Catalyst"
+            , "Awakener's Orb"
         ]
     }
     , "Card": {
@@ -408,6 +410,23 @@
             
             , "The Wolf's Legacy"
             , "The Mountain"
+            , "Baited Expectations"
+            , "Succor of the Sinless"
+            , "Underground Forest"
+
+            , "The Escape"
+            , "Deathly Designs"
+            , "The Chosen"
+            , "Cameria's Cut"
+            , "Divine Justice"
+
+            , "The Fishmonger"
+            , "The Bones"
+            , "Friendship"
+            , "The Craving"
+            , "Etched in Blood"
+            
+            , "Squandered Prosperity"
         ]
     }
     , "Gems": {
@@ -418,6 +437,7 @@
             , "Enlighten"
             , "Portal"
             , "Vaal Breach"
+            , "Awakened"
         ]
     }
     , "Equipment": {

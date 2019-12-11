@@ -417,6 +417,38 @@ module.exports = {
             }
             , CurrentValue: 1
         }
+        , LeagueMetamorph: {
+            Class: `Metamorph Sample`
+            , Settings: [
+                {}
+                , {
+                    Classification: `League`
+                    , Code: {
+                    
+                    }
+                }
+            ]
+            , Code: {
+                //BaseType: `"Metamorph Sample"`
+            }
+            , CurrentValue: 1
+        }
+        , MapFragments: {
+            Class: `Map Fragments`
+            , Settings: [
+                {}
+                , {
+                    Classification: `MapFragments`
+                    , Code: {
+                    
+                    }
+                }
+            ]
+            , Code: {
+                //BaseType: `"Metamorph Sample"`
+            }
+            , CurrentValue: 1
+        }
         , MiscGeneral: {
             Class: `League`
             , Settings: [
@@ -1369,6 +1401,14 @@ module.exports = {
                         //SetTextColor: `0 74 37 {ALPHA}`
                     }
                 }
+                , MapFragments: {
+                    Alpha: `255`
+                    , MiniMapSize: `1`
+                    , MiniMapColor: `Green`
+                    , Code: {
+                        //SetTextColor: `0 74 37 {ALPHA}`
+                    }
+                }
                 , Leveling: {
                     Alpha: `255`
                     , Code: {
@@ -1385,9 +1425,11 @@ module.exports = {
             , MiniMapIcons = {
                 Currency: `Diamond`
                 , Incubator: `Diamond`
+                , 'Metamorph Sample': `Diamond`
                 , Card: `Square`
                 , Map: `Triangle`
                 , Fragments: `Triangle`
+                , MapFragments: `Triangle`
                 , Equipment: `Star` // not a real class, it will be excluded
                 , Recipe: `Hexagon` // not a real class, it will be excluded
                 , Armor: `Star`
@@ -1412,9 +1454,18 @@ module.exports = {
                     SetTextColor: `125 225 225 {ALPHA}`
                     , SetBorderColor: `225 125 225 {ALPHA}`
                 }
+                , 'Metamorph Sample': {
+                    //SetBackgroundColor: `37 0 37 {ALPHA}`
+                    SetTextColor: `125 225 225 {ALPHA}`
+                    , SetBorderColor: `225 125 225 {ALPHA}`
+                }
                 , Card: {
                     //SetBackgroundColor: `37 37 37 {ALPHA}`
                     SetBorderColor: `125 125 225 {ALPHA}`
+                }
+                , MapFragments: {
+                    //SetBackgroundColor: `54 17 17 {ALPHA}`
+                    SetBorderColor: `225 125 125 {ALPHA}`
                 }
                 , Map: {
                     //SetBackgroundColor: `54 17 17 {ALPHA}`
@@ -1747,6 +1798,7 @@ module.exports = {
         Output += this.Print_CheckValue(`LeagueEssence`);
         Output += this.Print_CheckValue(`LeagueTalisman`);
         Output += this.Print_CheckValue(`LeagueBreach`);
+        Output += this.Print_CheckValue(`LeagueMetamorph`);
     
         // -- BASE_ITEMS -- \\
         Output += this.Print_CheckValue(`BaseElder`);
@@ -1771,6 +1823,7 @@ module.exports = {
         Output += this.Print_CheckValue(`RecipesGem`);
     
         // -- MAP -- \\
+        //Output += this.Print_CheckValue(`MapFragments`);
         Output += this.Print_Map();
     
         // -- UNIQUES -- \\
