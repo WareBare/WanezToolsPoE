@@ -66,6 +66,7 @@
             , "Oil"
             , "Catalyst"
             , "Awakener's Orb"
+            , "Delirium Orb"
         ]
     }
     , "Card": {
@@ -427,6 +428,14 @@
             , "Etched in Blood"
             
             , "Squandered Prosperity"
+            , "The Strategist"
+            , "The Cheater"
+            , "The Tinkerer's Table"
+            , "The Easy Stroll"
+            
+            , "The Progeny of Lunaris"
+            , "The Eldritch Decay"
+            , "Council of Cats"
         ]
     }
     , "Gems": {

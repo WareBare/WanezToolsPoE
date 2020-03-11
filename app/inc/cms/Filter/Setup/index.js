@@ -8,9 +8,9 @@
  */
 
 
-const VERSION_TOOL = `0.0.3 (ALPHA)`;
-const VERSION_POE = `3.7 (Legion)`;
-const DATETIME_TOOL = `2019-06-07`;
+const VERSION_TOOL = `0.0.5 (ALPHA)`;
+const VERSION_POE = `3.9 (Metamorph)`;
+const DATETIME_TOOL = `2019-12-13`;
 
 module.exports = {
     Forms:{},
@@ -602,6 +602,23 @@ module.exports = {
                     Classification: `T6`
                     , Code: {
                         ElderItem: `True`
+                    }
+                }
+            ]
+            , Code: {
+                DisableDropSound: ``
+                , Rarity: `<= Rare`
+            }
+            , CurrentValue: 1
+        }
+        , BaseInfluenced: {
+            Class: `Equipment`
+            , Settings: [
+                {}
+                , {
+                    Classification: `T6`
+                    , Code: {
+                        HasInfluence: `Shaper Elder Crusader Redeemer Hunter Warlord`
                     }
                 }
             ]
@@ -1504,7 +1521,7 @@ module.exports = {
                 }
             }
             , KeywordOrder = [
-                `LinkedSockets`, `Sockets`, `StackSize`, `Quality`, `Identified`, `SocketGroup`, `Height`, `Width`, `ElderItem`, `ShaperItem`, `FracturedItem`, `SynthesisedItem`, `ShapedMap`, `BlightedMap`, `MapTier`, `DropLevel`, `Class`, `BaseType`, `Rarity`, `HasExplicitMod`, `AnyEnchantment`, `ItemLevel`
+                `LinkedSockets`, `Sockets`, `StackSize`, `Quality`, `Identified`, `SocketGroup`, `Height`, `Width`, `ElderItem`, `ShaperItem`, `HasInfluence`, `FracturedItem`, `SynthesisedItem`, `ShapedMap`, `BlightedMap`, `MapTier`, `DropLevel`, `Class`, `BaseType`, `Rarity`, `HasExplicitMod`, `AnyEnchantment`, `ItemLevel`
                 , `SetFontSize`, `SetTextColor`, `SetBackgroundColor`, `SetBorderColor`, `DisableDropSound`, `PlayAlertSound`, `MinimapIcon`, `PlayEffect`
             ];
         
@@ -1801,8 +1818,9 @@ module.exports = {
         Output += this.Print_CheckValue(`LeagueMetamorph`);
     
         // -- BASE_ITEMS -- \\
-        Output += this.Print_CheckValue(`BaseElder`);
-        Output += this.Print_CheckValue(`BaseShaper`);
+        //Output += this.Print_CheckValue(`BaseElder`);
+        //Output += this.Print_CheckValue(`BaseShaper`);
+        Output += this.Print_CheckValue(`BaseInfluenced`);
         Output += this.Print_CheckValue(`BaseSynthesis`);
         Output += this.Print_Group(`Default Equipment`);
     
