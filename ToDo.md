@@ -6,7 +6,8 @@
 
 ---
 
-# v0.0.6
-* ***Updated:*** Divination Cards for 3.10
-* ***Updated:*** New Currency: Delirium Orb (assigned to T9 by default)
+# v0.0.7
+* ***Changed:*** Beam/Map Icon color of league specific items to purple.
+* ***Changed:*** Cluster Jewels & Abyssal Jewels to be different from regular Jewels.
+* ***Changed:*** Organs (Metamorph) should be easier to spot now.
 

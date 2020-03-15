@@ -8,9 +8,9 @@
  */
 
 
-const VERSION_TOOL = `0.0.5 (ALPHA)`;
-const VERSION_POE = `3.9 (Metamorph)`;
-const DATETIME_TOOL = `2019-12-13`;
+const VERSION_TOOL = `0.0.6 (ALPHA)`;
+const VERSION_POE = `3.10 (Delirium)`;
+const DATETIME_TOOL = `2020-03-15`;
 
 module.exports = {
     Forms:{},
@@ -669,7 +669,7 @@ module.exports = {
             , Settings: [
                 {}
                 , {
-                    Classification: `T4`
+                    Classification: `T2`
                     , Code: [
                         {
                             Rarity: `Rare`
@@ -684,6 +684,29 @@ module.exports = {
             ]
             , Code: {
             
+            }
+            , CurrentValue: 1
+        }
+        , ClusterJewels: {
+            Class: `ClusterJewel`
+            , Settings: [
+                {}
+                , {
+                    Classification: `League`
+                    , Code: [
+                        {
+                            Rarity: `Rare`
+                            , SetFontSize: `45`
+                        }
+                        , {
+                            Rarity: `<= Magic`
+                            , SetFontSize: `35`
+                        }
+                    ]
+                }
+            ]
+            , Code: {
+                BaseType: `"Cluster Jewel" "Eye Jewel"`
             }
             , CurrentValue: 1
         }
@@ -1413,7 +1436,7 @@ module.exports = {
                 , League: {
                     Alpha: `255`
                     , MiniMapSize: `1`
-                    , MiniMapColor: `Green`
+                    , MiniMapColor: `Purple`
                     , Code: {
                         //SetTextColor: `0 74 37 {ALPHA}`
                     }
@@ -1432,6 +1455,14 @@ module.exports = {
                         SetBackgroundColor: `0 0 37 {ALPHA}`
                     }
                 }
+                , ClusterJewel: {
+                    Alpha: `255`
+                    , MiniMapSize: `0`
+                    , MiniMapColor: `Grey`
+                    , Code: {
+                        //SetTextColor: `200 200 200 {ALPHA}`
+                    }
+                }
                 , Custom: {
                     Alpha: `255`
                     , Code: {
@@ -1441,8 +1472,8 @@ module.exports = {
             }
             , MiniMapIcons = {
                 Currency: `Diamond`
-                , Incubator: `Diamond`
-                , 'Metamorph Sample': `Diamond`
+                , Incubator: `UpsideDownHouse`
+                , 'Metamorph Sample': `UpsideDownHouse`
                 , Card: `Square`
                 , Map: `Triangle`
                 , Fragments: `Triangle`
@@ -1457,6 +1488,7 @@ module.exports = {
                 , 'Off-hand': `Star`
                 , Gems: `Circle`
                 , Jewel: `Circle`
+                , ClusterJewel: `UpsideDownHouse`
                 , League:  `Hexagon`
                 , 'Incursion Item': `Hexagon`
             }
@@ -1473,7 +1505,9 @@ module.exports = {
                 }
                 , 'Metamorph Sample': {
                     //SetBackgroundColor: `37 0 37 {ALPHA}`
-                    SetTextColor: `125 225 225 {ALPHA}`
+                    SetFontSize: `45`
+                    , SetBackgroundColor: `37 0 37 {ALPHA}`
+                    , SetTextColor: `187 187 224 {ALPHA}`
                     , SetBorderColor: `225 125 225 {ALPHA}`
                 }
                 , Card: {
@@ -1506,6 +1540,10 @@ module.exports = {
                 , Jewel: {
                     SetBackgroundColor: `0 37 37 {ALPHA}`
                     , SetBorderColor: `55 255 155 {ALPHA}`
+                }
+                , ClusterJewel: {
+                    SetBackgroundColor: `0 37 37 {ALPHA}`
+                    , SetBorderColor: `75 75 75 {ALPHA}`
                 }
                 , League: {
                     SetBackgroundColor: `0 74 37 {ALPHA}`
@@ -1544,6 +1582,9 @@ module.exports = {
         
         if(InGroupName !== `Equipment` && InGroupName !== `Recipe` && InGroupName !== `League`){
             BaseCode[`Class`] = `"${InGroupName}"`;
+        }
+        if(InGroupName === `ClusterJewel`){
+            BaseCode[`Class`] = `"Jewel"`;
         }
         if(InBaseTypes.length){
             BaseCode[`BaseType`] = `{BASE_TYPE}`;
@@ -1824,6 +1865,7 @@ module.exports = {
         Output += this.Print_CheckValue(`BaseSynthesis`);
         Output += this.Print_Group(`Default Equipment`);
     
+        Output += this.Print_CheckValue(`ClusterJewels`);
         Output += this.Print_CheckValue(`BaseJewels`);
         
         // -- RECIPE -- \\
