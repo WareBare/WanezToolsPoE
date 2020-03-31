@@ -19,7 +19,11 @@ module.exports = {
                 console.warn(err);
                 log.error(`${err}`);
             } else {
-                wzNotify.save(`${$filepath.replace($removeFromPath,``)}`);
+                //wzNotify.save(`${$filepath.replace($removeFromPath,``)}`);
+                wzUpdateHeader(`Saved File: ${$filepath.replace($removeFromPath,``)}`);
+                setTimeout(() => {
+                    wzUpdateHeader(` `);
+                }, 5000);
                 console.info(`File Saved: ${$filepath.replace($removeFromPath,``)}`);
             }
         });

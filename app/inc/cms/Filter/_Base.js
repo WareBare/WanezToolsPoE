@@ -20,6 +20,7 @@ module.exports = {
             
         }
         this.LoadSettingsFiles();
+        //console.log(Math.floor(Math.random() * 1000000000 + 1));
     },
     OnLoad: function()
     {
@@ -42,6 +43,7 @@ module.exports = {
             
         }
         
+        console.log(this.aFilters);
     },
     
     LoadFilters: function()
@@ -76,18 +78,35 @@ module.exports = {
     CreateNewFilter: function(InFilterName = `NoName`)
     {
         this.FilterData = new eConfig({name: `filterData-${InFilterName}`});
-        
-        if(InFilterName === `NoName`) wzReloadCMS(10); // is `NoName` if button was used (reload required)
     },
     
     DeleteFilter: function(InFilterDataPath = false)
     {
         let FilterDataPath = InFilterDataPath || this.FilterData.path;
+        console.log(FilterDataPath);
+        fs.removeSync(FilterDataPath);
+
         this.FilterData = false;
         this.contentType = false;
-        fs.removeSync(FilterDataPath);
     
-        if(InFilterDataPath === false) wzReloadCMS(10); // is false if button was used (reload required)
+        // is false if button was used (reload required)
+        if (InFilterDataPath === false)
+        {
+            this.LoadSettingsFiles();
+            appConfig.set(`PathOfExile.ActiveFilter`, this.aFilters[0] || `Default`);
+            wzReloadCMS(10);
+        }
+    },
+
+    GenerateNewFilter: function()
+    {
+        let FilterDataStore = (this.FilterData) ? this.FilterData.store : {};
+
+        this.CreateNewFilter(`Generated${Math.floor(Math.random() * 1000000000 + 1)}`);
+
+        this.FilterData.store = FilterDataStore;
+        this.LoadSettingsFiles();
+        wzReloadCMS(10);
     },
     
     RenameFilter: function(InNewName)
@@ -100,6 +119,9 @@ module.exports = {
         
         this.DeleteFilter(FilterDataPath);
         
+        this.LoadSettingsFiles();
+
+        appConfig.set(`PathOfExile.ActiveFilter`, InNewName);
     
         wzReloadCMS(10);
     },
@@ -112,7 +134,7 @@ module.exports = {
     
     
         NewFilter = {
-            "ONCLICK": "_cms.Base.CreateNewFilter()"
+            "ONCLICK": "_cms.Base.GenerateNewFilter()"
             , "TEXT": "New Filter"
         };
         if(this.FilterData){

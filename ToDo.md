@@ -6,8 +6,10 @@
 
 ---
 
-# v0.0.7
-* ***Changed:*** Beam/Map Icon color of league specific items to purple.
-* ***Changed:*** Cluster Jewels & Abyssal Jewels to be different from regular Jewels.
-* ***Changed:*** Organs (Metamorph) should be easier to spot now.
-
+# v0.1.0 - Essential Update
+* ***New:*** App will now be minimized to System-Try when closed (options for this are in `App/Settings`).
+* ***New:*** Fancy new app icon.
+* ***New:*** Essences now have multiple options available.
+* ***UI:*** Fancy new look for the tool.
+* ***BugFix:*** Talisman would cause an error trying to hide them.
+* ***BugFix:*** Various issues in regards to managing filters have been fixed.

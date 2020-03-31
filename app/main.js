@@ -2,7 +2,7 @@
  * Created by WareBare on 8/22/2016.
  */
 
-const {app, BrowserWindow, dialog} = require('electron');
+const {app, BrowserWindow, dialog, Menu, Tray} = require('electron');
 const {} = require('electron');
 const { autoUpdater }  = require("electron-updater");
 
@@ -109,6 +109,7 @@ class AppUpdater {
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
+let tray = null;
 
 function createWindow () {
     // Create the browser window.
@@ -117,6 +118,7 @@ function createWindow () {
         height: 600,
         minHeight: 600,
         minWidth: 860,
+        frame: false,
         backgroundColor: '#202020'
         //, useContentSize: true
         , webPreferences: {
@@ -136,6 +138,31 @@ function createWindow () {
     // Open the DevTools.
     if(app.getName() === `Electron`) win.webContents.openDevTools();
     //win.webContents.openDevTools();
+
+    tray = new Tray(`${__dirname}/img/Icon.png`);
+    const trayContextMenu = Menu.buildFromTemplate([
+        {
+            label: 'Show Tool'
+            , type: 'normal'
+            , click: () => {
+                //win.show();
+                win.webContents.send(`ShowWindow`);
+            }
+            , enabled: true
+        },
+        { 
+            label: 'Quit Tool'
+            , type: 'normal'
+            , role: `quit`
+            , enabled: true
+        }
+    ]);
+    tray.setTitle(`test`);
+    tray.setToolTip(`Wanez Projects (Wanez Tool for Path of Exile)`);
+    tray.setContextMenu(trayContextMenu);
+    tray.on(`click`, () => {
+        win.webContents.send(`ShowWindow`);
+    })
 
     // Emitted when the window is closed.
     win.on('closed', () => {

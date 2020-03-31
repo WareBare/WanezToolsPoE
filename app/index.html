@@ -2,13 +2,22 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Wanez Tools :: Path of Exile</title>
+    <title>Wanez Projects :: Path of Exile</title>
     <script src="lib/tga.js"></script>
     <script src="lib/moment.js"></script>
     <link rel="stylesheet" href="themes/default.css" type="text/css">
 </head>
 <body>
-    <div>Loading...</div>
+    <div id="App_TitleBar">
+        <div id="App_TitleText">Wanez Projects :: Path of Exile</div>
+        <div id="App_TitleButtons">
+            <button id="AppBtn_Minimize">-</button>
+            <button id="AppBtn_Maximize">+</button>
+            <button id="AppBtn_Close">x</button>
+        </div>
+        
+    </div>
+    <div id="App_GeneratedContent">Loading...</div>
 <script>
     const electron = require('electron');
     const AdmZip = require('adm-zip');

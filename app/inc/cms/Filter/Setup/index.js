@@ -8,9 +8,9 @@
  */
 
 
-const VERSION_TOOL = `0.0.6 (ALPHA)`;
-const VERSION_POE = `3.10 (Delirium)`;
-const DATETIME_TOOL = `2020-03-15`;
+const VERSION_TOOL = `0.1.0 (ALPHA)`;
+const VERSION_POE = `3.10.1b (Delirium)`;
+const DATETIME_TOOL = `2020-03-31`;
 
 module.exports = {
     Forms:{},
@@ -385,21 +385,45 @@ module.exports = {
             }
             , CurrentValue: 1
         }
-        , LeagueEssence: {
-            Class: `Currency`
+        , LeagueEssence2: {
+            Class: `LeagueRanked`
             , Settings: [
-                {}
-                , {
-                    Classification: `League`
+                {
+                    Classification: `LeagueS`
                     , Code: {
-                    
+                        BaseType: `"Essence of Delirium" "Essence of Horror" "Essence of Hysteria" "Essence of Insanity"`
+                    }
+                }
+                , {
+                    Classification: `LeagueA`
+                    , Code: {
+                        BaseType: `"Remnant of Corruption"`
+                    }
+                }
+                , {
+                    Classification: `LeagueB`
+                    , Code: {
+                        BaseType: `"Deafening Essence" "Shrieking Essence" "Screaming Essence"`
+                    }
+                }
+                , {
+                    Classification: `LeagueC`
+                    , Code: {
+                        BaseType: `"Wailing Essence" "Weeping Essence"`
+                    }
+                }
+                , {
+                    Classification: `LeagueD`
+                    , Code: {
+                        BaseType: `"Muttering Essence" "Whispering Essence"`
                     }
                 }
             ]
             , Code: {
-                BaseType: `"Essence"`
+                //BaseType: `"Essence"`
+                Class: `Currency`
             }
-            , CurrentValue: 1
+            , CurrentValue: [true, true, true, false, false]
         }
         , LeagueTalisman: {
             Class: `Amulet`
@@ -1034,16 +1058,24 @@ module.exports = {
         Output += this.SelectionForm_Create({
             LegendName: `League Specific Items`
             , Items: [
-                {
+                /*{
                     FieldName: `Essences`
                     , ElementName: `LeagueEssence`
                     , bCheckBox: false
                     , Fields: [`Hide`, `Show`]
                 }
+                , */{
+                    FieldName: `Essences`
+                    , ElementName: `LeagueEssence2`
+                    , bCheckBox: true
+                    , bUseBreak: true
+                    , Fields: [`Specials`, `Remnant of Corruption`, `T5-T7`, `T3 & T4`, `T1 & T2`]
+                }
                 , {
                     FieldName: `Talisman`
                     , ElementName: `LeagueTalisman`
                     , bCheckBox: false
+                    , bUseBreak: true
                     , Fields: [`Hide`, `Show`]
                 }
             ]
@@ -1266,8 +1298,19 @@ module.exports = {
             }});
         }
         */
+
+        if (typeof appConfig.get(`PathOfExile.ActiveFilter`) === `undefined`)
+        {
+            appConfig.set(`PathOfExile.ActiveFilter`, InContentType || `Default`);
+        }
+        if (typeof InContentType !== `undefined`) 
+        {
+            appConfig.set(`PathOfExile.ActiveFilter`, InContentType);
+        }
+
         //this.Base.contentType = InContentType || `Default`;
-        this.contentType = this.Base.LoadContent(InContentType);
+        //this.contentType = this.Base.LoadContent(InContentType);
+        this.contentType = this.Base.LoadContent(appConfig.get(`PathOfExile.ActiveFilter`));
         let Output = ``;
         
         if(!this.Base.FilterSettings.has(`Path`)){
@@ -1441,6 +1484,54 @@ module.exports = {
                         //SetTextColor: `0 74 37 {ALPHA}`
                     }
                 }
+                , LeagueS: {
+                    Alpha: `255`
+                    , MiniMapSize: `0`
+                    , MiniMapColor: `Blue`
+                    , Code: {
+                        SetFontSize: `45`
+                        , SetBackgroundColor: `37 37 74 {ALPHA}`
+                        //SetTextColor: `0 74 37 {ALPHA}`
+                    }
+                }
+                , LeagueA: {
+                    Alpha: `255`
+                    , MiniMapSize: `0`
+                    , MiniMapColor: `Red`
+                    , Code: {
+                        SetFontSize: `45`
+                        , SetBackgroundColor: `74 0 0 {ALPHA}`
+                        //SetTextColor: `0 74 37 {ALPHA}`
+                    }
+                }
+                , LeagueB: {
+                    Alpha: `255`
+                    , MiniMapSize: `1`
+                    , MiniMapColor: `Brown`
+                    , Code: {
+                        SetBackgroundColor: `74 37 0 {ALPHA}`
+                        //SetTextColor: `0 74 37 {ALPHA}`
+                    }
+                }
+                , LeagueC: {
+                    Alpha: `255`
+                    , MiniMapSize: `2`
+                    , MiniMapColor: `Yellow`
+                    , Code: {
+                        SetBackgroundColor: `74 74 37 {ALPHA}`
+                        //SetTextColor: `0 74 37 {ALPHA}`
+                    }
+                }
+                , LeagueD: {
+                    Alpha: `255`
+                    , MiniMapSize: `2`
+                    , MiniMapColor: `White`
+                    , Code: {
+                        SetFontSize: `25`
+                        , SetBackgroundColor: `74 74 74 {ALPHA}`
+                        //SetTextColor: `0 74 37 {ALPHA}`
+                    }
+                }
                 , MapFragments: {
                     Alpha: `255`
                     , MiniMapSize: `1`
@@ -1489,8 +1580,14 @@ module.exports = {
                 , Gems: `Circle`
                 , Jewel: `Circle`
                 , ClusterJewel: `UpsideDownHouse`
-                , League:  `Hexagon`
-                , 'Incursion Item': `Hexagon`
+                , League:  `UpsideDownHouse`
+                , LeagueRanked:  `UpsideDownHouse`
+                , LeagueS:  `UpsideDownHouse`
+                , LeagueA:  `UpsideDownHouse`
+                , LeagueB:  `UpsideDownHouse`
+                , LeagueC:  `UpsideDownHouse`
+                , LeagueD:  `UpsideDownHouse`
+                , 'Incursion Item': `UpsideDownHouse`
             }
             , ColorPerType = {
                 Currency: {
@@ -1549,6 +1646,30 @@ module.exports = {
                     SetBackgroundColor: `0 74 37 {ALPHA}`
                     , SetBorderColor: `55 255 155 {ALPHA}`
                 }
+                , LeagueRanked: {
+                    //SetBackgroundColor: `0 74 37 {ALPHA}`
+                    SetBorderColor: `55 255 155 {ALPHA}`
+                }
+                , LeagueS: {
+                    SetBackgroundColor: `0 74 37 {ALPHA}`
+                    , SetBorderColor: `55 255 155 {ALPHA}`
+                }
+                , LeagueA: {
+                    SetBackgroundColor: `0 74 37 {ALPHA}`
+                    , SetBorderColor: `55 255 155 {ALPHA}`
+                }
+                , LeagueB: {
+                    SetBackgroundColor: `0 74 37 {ALPHA}`
+                    , SetBorderColor: `55 255 155 {ALPHA}`
+                }
+                , LeagueC: {
+                    SetBackgroundColor: `0 74 37 {ALPHA}`
+                    , SetBorderColor: `55 255 155 {ALPHA}`
+                }
+                , LeagueD: {
+                    SetBackgroundColor: `0 74 37 {ALPHA}`
+                    , SetBorderColor: `55 255 155 {ALPHA}`
+                }
                 , Amulet: {
                     SetBackgroundColor: `0 74 37 {ALPHA}`
                     , SetBorderColor: `55 255 155 {ALPHA}`
@@ -1590,14 +1711,20 @@ module.exports = {
             BaseCode[`BaseType`] = `{BASE_TYPE}`;
         }
         if(InClassification !== `Hidden`){
-            for(let Keyword in ColorScheme[InClassification][`Code`]){
-                BaseCode[Keyword] = ColorScheme[InClassification][`Code`][Keyword].wzReplace({ALPHA: ColorScheme[InClassification][`Alpha`]});
+            if (ColorScheme[InClassification] && ColorScheme[InClassification][`Code`]) {
+                for(let Keyword in ColorScheme[InClassification][`Code`]){
+                    BaseCode[Keyword] = ColorScheme[InClassification][`Code`][Keyword].wzReplace({ALPHA: ColorScheme[InClassification][`Alpha`]});
+                }
             }
-            for(let Keyword in ColorPerType[InGroupName]){
-                BaseCode[Keyword] = ColorPerType[InGroupName][Keyword].wzReplace({ALPHA: ColorScheme[InClassification][`Alpha`]});
+            
+            if (ColorScheme[InClassification] && ColorScheme[InClassification][`Alpha`]) {
+                for(let Keyword in ColorPerType[InGroupName]){
+                    BaseCode[Keyword] = ColorPerType[InGroupName][Keyword].wzReplace({ALPHA: ColorScheme[InClassification][`Alpha`]});
+                }
             }
+            
     
-            if(ColorScheme[InClassification].MiniMapSize && ColorScheme[InClassification].MiniMapColor && MiniMapIcons[InGroupName]){
+            if(ColorScheme[InClassification] && ColorScheme[InClassification].MiniMapSize && ColorScheme[InClassification].MiniMapColor && MiniMapIcons[InGroupName]){
                 BaseCode[`MinimapIcon`] = `${ColorScheme[InClassification].MiniMapSize} ${ColorScheme[InClassification].MiniMapColor} ${MiniMapIcons[InGroupName]}`;
                 BaseCode[`PlayEffect`] = `${ColorScheme[InClassification].MiniMapColor}`;
             }
@@ -1833,6 +1960,9 @@ module.exports = {
     },
     
     WriteFilter: function(){
+        
+        wzUpdateHeader(`Writing Filter...`);
+
         //Log(this.ActiveData);
         
         // Shapes: [Circle, Diamond, Hexagon, Square, Star, Triangle]
@@ -1853,8 +1983,22 @@ module.exports = {
         Output += this.Print_CheckValue(`LeagueLegion`);
     
         // -- LEAGUE -- \\
-        Output += this.Print_CheckValue(`LeagueEssence`);
-        Output += this.Print_CheckValue(`LeagueTalisman`);
+        Output += this.Print_CheckValue(`LeagueEssence2`);
+        Output += `\nHide\n`;
+        Output += `    Class "Currency"\n`;
+        Output += `    BaseType "Essence"\n`;
+        const TalismanOutput = this.Print_CheckValue(`LeagueTalisman`);
+        
+        if (!this.Print_CheckBoolean(`LeagueTalisman`))
+        {
+            Output += `\nHide\n`;
+            Output += `    Class "Amulet"\n`;
+            Output += `    BaseType "Talisman"\n`;
+        }
+        else
+        {
+            Output += TalismanOutput;
+        }
         Output += this.Print_CheckValue(`LeagueBreach`);
         Output += this.Print_CheckValue(`LeagueMetamorph`);
     

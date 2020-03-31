@@ -1,5 +1,210 @@
 // Created by WareBare on 10/23/2016.
 
+
+
+$Base_BackgroundColor_00: #202024; // Body
+$Base_BackgroundColor_01: #2D2D36; // Navigation
+
+// SideBar List Button
+$SideBarList_BackgroundColor_00_HOVER: #505050;
+$SideBarList_BackgroundColor_00_ACTIVE: #505050;
+
+$SideBarList_FontColor_00_ACTIVE: rgb(153, 140, 24);
+
+
+
+
+
+$border-000: #000000;
+
+$backgroundColor-000: #202020;
+$backgroundColor-001: #404040;
+$backgroundColor-001b: #303030;
+$backgroundColor-002: #606060;
+
+$backgroundColor-003: #401F0C;
+$backgroundColor-004: #57371B;
+$backgroundColor-005: #67472B;
+
+$backgroundColor-006: #300F00;
+$backgroundColor-007: #482715;
+$backgroundColor-008: #502F1C;
+$backgroundColor-009: #583725;
+$backgroundColor-010: #603F2C;
+
+$fontColor-000: #AFAFAF;
+$fontColor-001: #B5A58A;
+$fontColor-001b: #C5B58B;
+$fontColor-002: #2F2F2F;
+
+$borderColor-ButtonHover: #555599;
+$borderColor-ButtonActive: #555599;
+
+$gradientBTN-000: linear-gradient($backgroundColor-000, $backgroundColor-001);
+$gradientBTN-000b: linear-gradient($backgroundColor-001, $backgroundColor-000);
+$gradientBTN-000c: linear-gradient($backgroundColor-001, $backgroundColor-002);
+$gradientBTN-001: linear-gradient($backgroundColor-003,$backgroundColor-003, $backgroundColor-004);
+$gradientBTN-001b: linear-gradient($backgroundColor-004,$backgroundColor-003, $backgroundColor-003);
+$gradientBTN-001c: linear-gradient($backgroundColor-003,$backgroundColor-004, $backgroundColor-005);
+
+$gradientBTN-nav000: linear-gradient(to right, $backgroundColor-006 , $backgroundColor-003);
+$gradientBTN-nav001: linear-gradient(to right, $backgroundColor-007 , $backgroundColor-008);
+$gradientBTN-nav002: linear-gradient(to right, $backgroundColor-009 , $backgroundColor-010);
+
+$gradientLabel-001: linear-gradient($backgroundColor-001b , $backgroundColor-000);
+
+
+
+// TABLE \\
+// FONT
+$Table_Color01: #AFAFAF;
+$Table_TopRow_Color01: #AFAFAF;
+$Table_Rows_Color01: #000000;
+$Table_Rows_Color02: #000000;
+
+// BG
+$Table_BGColor01a: #000000;
+$Table_BGColor01b: #202020;
+//$Table_BGColor01c: #101010;
+$Table_TopRow_BGColor01a: #5F5F5F;
+$Table_TopRow_BGColor01b: #6F6F6F;
+//$Table_TopRow_BGColor01c: #101010;
+$Table_Rows_BGColor01a: #AFAFDF;
+$Table_Rows_BGColor01b: #9F9FCF;
+//$Table_Rows_BGColor01c: #101010;
+$Table_Rows_BGColor02a: #AFAFDF;
+$Table_Rows_BGColor02b: #BFBFEF;
+//$Table_Rows_BGColor02c: #101010;
+
+// Gradient
+$Table_Gradient01: linear-gradient($Table_BGColor01a , $Table_BGColor01b);
+$Table_TopRow_Gradient01: linear-gradient($Table_TopRow_BGColor01a , $Table_TopRow_BGColor01b);
+$Table_Rows_Gradient01: linear-gradient($Table_Rows_BGColor01a , $Table_Rows_BGColor01b);
+$Table_Rows_Gradient02: linear-gradient($Table_Rows_BGColor02a , $Table_Rows_BGColor02b);
+
+// TOOLTIP \\
+// FONT
+$ToolTip_Color01: #AFAFAF;
+
+// BG
+$ToolTip_BGColor01a: #000000;
+$ToolTip_BGColor01b: #202020;
+$ToolTip_BGColor01c: #101010;
+
+// Gradient
+$ToolTip_Gradient01: linear-gradient($ToolTip_BGColor01a , $ToolTip_BGColor01b);
+
+
+// ERROR \\
+// BG
+$Error_BGColor01a: #AF2020;
+$Error_BGColor01b: #8F1010;
+$Error_BGColor01c: #6F0000;
+
+$Warn_Color01: #c9b12b;
+$Warn_Color02: #635402;
+
+// Gradient
+$Error_Gradient01: linear-gradient($Error_BGColor01a , $Error_BGColor01b);
+$Error_Gradient02: linear-gradient($Error_BGColor01a , $Error_BGColor01c);
+
+// LABEL \\
+// FONT
+
+
+// BG
+$Label_BGColor01a: #303030;
+$Label_BGColor01b: #202020;
+$Label_BGColor01c: #101010;
+
+$Label_BGColor01a_HOVER: #205020;
+
+
+// Border
+
+// Gradient
+$Label_Gradient01: linear-gradient($Label_BGColor01a , $Label_BGColor01b);
+$Label_Gradient01_HOVER: linear-gradient($Label_BGColor01a, $Label_BGColor01b, $Label_BGColor01a_HOVER);
+$Label_Gradient02: linear-gradient($Label_BGColor01a , $Label_BGColor01c);
+
+
+// INPUT - RADIO|CHECK|SELECT \\
+// FONT
+$Radio_Color01: #202020;
+$Radio_Color01_HOVER: #0A0A0A;
+$Radio_Color01_CHECKED: #202020;
+$Radio_Color01_CHECKED_HOVER: #DFDFDF;
+
+// BG
+$Radio_BGColor01a: #505050;
+$Radio_BGColor01b: #6F6F6F;
+
+$Radio_BGColor02a: #66AF66;
+$Radio_BGColor02b: #408F40;
+
+$Radio_BGColor03a: #006600;
+
+$Radio_BGColor04a: #003300;
+
+// Border
+
+// Gradient
+$Radio_Gradient01: linear-gradient($Radio_BGColor01a , $Radio_BGColor01b);
+$Radio_Gradient01_HOVER: linear-gradient($Radio_BGColor01b , $Radio_BGColor01a);
+$Radio_Gradient01_CHECKED: linear-gradient($Radio_BGColor02a , $Radio_BGColor02b);
+$Radio_Gradient01_CHECKED_HOVER: linear-gradient($Radio_BGColor02a , $Radio_BGColor02b);
+
+
+
+// KBD \\
+// FONT
+$KBD_Color01: #000000;
+$KBD_Color01b: #AFAFAF;
+
+
+// BG
+$KBD_BGColor01a: #8F8F8F;
+$KBD_BGColor01b: #AFAFAF;
+
+// Gradient
+$KBD_Gradient01: linear-gradient($KBD_BGColor01a , $KBD_BGColor01b);
+
+
+// DETAILS \\
+// FONT
+
+$DetailsSummary_Color01: #101010;
+$DetailsSummary_Color01_HOVER: #202020;
+$DetailsSummary_Color01_ACTIVE: #050505;
+
+$Details_BorderColor01: rgba(255,255,255,.35);
+
+// BG
+$Details_BGColor01a: #202020;
+$Details_BGColor01b: #2F2F2F;
+$Details_BGColor02a: #8F8F8F;
+$Details_BGColor02b: #7F7F7F;
+
+$DetailsSummary_BGColor01a: #8F8F8F;
+$DetailsSummary_BGColor01b: #7F7F7F;
+$DetailsSummary_BGColor02a: #7F7F7F;
+$DetailsSummary_BGColor02b: #8F8F8F;
+$DetailsSummary_BGColor03a: #8F8F8F;
+$DetailsSummary_BGColor03b: #9F9F9F;
+
+$DetailsSummay_Arrow01: #5F0000;
+$DetailsSummay_Arrow01b: #005F00;
+
+// Gradient
+$Details_Gradient01: linear-gradient($Details_BGColor01a , $Details_BGColor01b);
+$Details_Gradient01_OPEN: linear-gradient($Details_BGColor02a , $Details_BGColor02b);
+$DetailsSummary_Gradient01: linear-gradient($DetailsSummary_BGColor01a , $DetailsSummary_BGColor01b);
+$DetailsSummary_Gradient01_HOVER: linear-gradient($DetailsSummary_BGColor02a , $DetailsSummary_BGColor02b);
+$DetailsSummary_Gradient01_ACTIVE: linear-gradient($DetailsSummary_BGColor03a , $DetailsSummary_BGColor03b);
+
+
+
+/*
 $border-000: #000000;
 
 $backgroundColor-000: #202020;
@@ -136,5 +341,5 @@ $Radio_Gradient01: linear-gradient($Radio_BGColor01a , $Radio_BGColor01b);
 $Radio_Gradient01_HOVER: linear-gradient($Radio_BGColor01b , $Radio_BGColor01a);
 $Radio_Gradient01_CHECKED: linear-gradient($Radio_BGColor02a , $Radio_BGColor02b);
 $Radio_Gradient01_CHECKED_HOVER: linear-gradient($Radio_BGColor02a , $Radio_BGColor02b);
-
+*/
 

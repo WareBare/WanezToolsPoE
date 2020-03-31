@@ -6,6 +6,135 @@ class cApp extends libWZ.Core.cBase{
     
     constructor(){
         super();
+
+        /// ---
+    }
+
+    PostLoad()
+    {
+        const window = remote.getCurrentWindow();
+
+        document.getElementById(`AppBtn_Minimize`).addEventListener(`click`, function(e){
+            if (appConfig.get(`ProgramOptions.bMinimizeToTray`))
+            {
+                window.hide();
+            }
+            else
+            {
+                window.minimize();
+            }
+            
+        });
+
+        document.getElementById(`AppBtn_Maximize`).addEventListener(`click`, function(e){
+            if (window.isMaximized()) {
+                window.unmaximize();
+            }else{
+                window.maximize();
+            }
+        });
+
+        document.getElementById(`AppBtn_Close`).addEventListener(`click`, function(e){
+            //window.close();
+            if (appConfig.get(`ProgramOptions.bCloseToTray`))
+            {
+                window.hide();
+            }
+            else
+            {
+                window.close();
+            }
+        });
+
+
+        require('electron').ipcRenderer.on(`ShowWindow`, (InEvent) => {
+            window.show();
+            //console.log(`Showing Window again`);
+            wzReloadCMS(10);
+        });
+
+        /*
+        require('electron').ipcRenderer.on(`RunGame_GrimDawn`, fnRunGame_GrimDawn);
+        require('electron').ipcRenderer.on(`RunGame_GrimDawnGI`, fnRunGame_GrimDawnGI);
+
+        document.getElementById(`App_RunGrimDawn`).addEventListener(`click`, () => {
+            fnRunGame_GrimDawnGI(false)
+        });
+
+        document.getElementById(`App_RunGrimDawn`).addEventListener(`contextmenu`, () => {
+            fnRunGame_GrimDawn(false)
+        });
+        */
+        
+    }
+
+    GenerateTitleBar()
+    {
+        let outTitleBar = {}
+            , tmpTitleButton = `<div id="{ID}" class="TitleBarBTN">{TEXT}</div>`
+            , windowButtons = ``
+            , TitleBarContent = ``;
+        
+        const TitleBarId = this.appData.tpl_app.TitleBar.ID
+            , tmpTitleBarContent = this.appData.tpl_app.TitleBar.CONTENT
+            , titleBarSettings = this.appData.tpl_app.TitleBar.Settings;
+
+        if (titleBarSettings.bUseButton_Minimize) {
+            windowButtons += tmpTitleButton.wzReplace({
+                ID: `AppBtn_Minimize`
+                , TEXT: `-`
+            });
+        }
+        if (titleBarSettings.bUseButton_Maximize) {
+            windowButtons += tmpTitleButton.wzReplace({
+                ID: `AppBtn_Maximize`
+                , TEXT: `+`
+            });
+        }
+        if (titleBarSettings.bUseButton_Close) {
+            windowButtons += tmpTitleButton.wzReplace({
+                ID: `AppBtn_Close`
+                , TEXT: `x`
+            });
+        }
+
+        TitleBarContent += tmpTitleBarContent.wzReplace({
+            WINDOW_BUTTONS: windowButtons
+        });
+
+        outTitleBar = {
+            "ID": TitleBarId
+            , "CONTENT": TitleBarContent
+        };
+
+        // return full nav string with all navItems, menuItems and subMenuItems
+        return outTitleBar;
+    }
+
+    GenerateHeader()
+    {
+        let outHeader = {
+            ID: `App_Header`
+            , CONTENT: ``
+        };
+        
+        //const contentTexts = (`${appConfig.get('cms')}`).split(`,`);
+        const tmpNotifyAreaContent = `<div id="notifyArea"></div>`;
+        const tmpHeaderTitleContent = `<div id="app_HeaderApps">{TEXT}</div>`;
+        const tmpHeaderNotifyContent = `<div id="App_HeaderNotify">Loading...</div>`;
+        const tmpRefreshButton = `<img src="img/refresh.png" onclick="location.reload();" title="Reload (F5)"></img>`;
+        //const runGrimDawnGame = `<img id="App_RunGrimDawn" src="img/Grim Dawn.png" title="Play Game: Grim Dawn \n- left-click will try to launch GI first (F8)\n- right-click launches the game without GI (F9)"></img>`;
+
+        outHeader.CONTENT += tmpNotifyAreaContent;
+        outHeader.CONTENT += tmpHeaderTitleContent.wzReplace({
+            //TEXT: `${contentTexts[contentTexts.length - 1]}`
+            TEXT: ``
+        });
+        outHeader.CONTENT += tmpHeaderNotifyContent;
+        outHeader.CONTENT += tmpRefreshButton;
+        //outHeader.CONTENT += runGrimDawnGame;
+        
+        return outHeader;
     }
 
     AllowNavItem(InNavPath){
@@ -164,12 +293,14 @@ class cApp extends libWZ.Core.cBase{
         });
         
         return super.create_(this.appData.tpl.App,{
-            'HEADER': this.appData.tpl.Container.wzOut(this.appData.tpl_app.Header), // tmpData.app.Header.wzOut(tmpApp.Header)
+            //'TITLE': this.appData.tpl.Container.wzOut(this.GenerateTitleBar()),
+            //'HEADER': this.appData.tpl.Container.wzOut(this.appData.tpl_app.Header), // tmpData.app.Header.wzOut(tmpApp.Header)
+            'HEADER': this.appData.tpl.Container.wzOut(this.GenerateHeader()),
             'NAV': this.appData.tpl.Container.wzOut(this.genNav($opt.Nav)),
             'CONTENT': this.appData.tpl.Container.wzOut(this.appData.tpl_app.Content),
             'SIDEBAR': this.appData.tpl.Container.wzOut(this.appData.tpl_app.SideBar),
             'FOOTER': this.appData.tpl.Container.wzOut(this.genFooter())
-        },document.body);
+        }, document.getElementById(`App_GeneratedContent`)); // document.body
     }
     
 }
