@@ -6,10 +6,7 @@
 
 ---
 
-# v0.1.0 - Essential Update
-* ***New:*** App will now be minimized to System-Try when closed (options for this are in `App/Settings`).
-* ***New:*** Fancy new app icon.
-* ***New:*** Essences now have multiple options available.
-* ***UI:*** Fancy new look for the tool.
-* ***BugFix:*** Talisman would cause an error trying to hide them.
-* ***BugFix:*** Various issues in regards to managing filters have been fixed.
+# v0.1.1 - Hotfix 1
+
+* ***Change:*** StackSize for currency adjusted to only override currency set up when at least 10.
+* ***BugFix:*** 21 Gems would not show up (now 20+ will always show, regardless of settings)

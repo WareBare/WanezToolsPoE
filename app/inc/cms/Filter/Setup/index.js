@@ -8,7 +8,7 @@
  */
 
 
-const VERSION_TOOL = `0.1.0 (ALPHA)`;
+const VERSION_TOOL = `0.1.1 (ALPHA)`;
 const VERSION_POE = `3.10.1b (Delirium)`;
 const DATETIME_TOOL = `2020-03-31`;
 
@@ -264,30 +264,35 @@ module.exports = {
                     Classification: `T12`
                     , Code: {
                         Quality: `>= 20`
+                        , GemLevel: `< 20`
                     }
                 }
                 , {
                     Classification: `T8`
                     , Code: {
                         Quality: `>= 14`
+                        , GemLevel: `< 20`
                     }
                 }
                 , {
                     Classification: `T6`
                     , Code: {
                         Quality: `>= 10`
+                        , GemLevel: `< 20`
                     }
                 }
                 , {
                     Classification: `T4`
                     , Code: {
                         Quality: `>= 8`
+                        , GemLevel: `< 20`
                     }
                 }
                 , {
                     Classification: `T3`
                     , Code: {
                         Quality: `>= 5`
+                        , GemLevel: `< 20`
                     }
                 }
                 , {
@@ -300,6 +305,7 @@ module.exports = {
                     Classification: `T1`
                     , Code: {
                         Quality: `0`
+                        , GemLevel: `< 20`
                     }
                 }
             ]
@@ -307,6 +313,22 @@ module.exports = {
             
             }
             , CurrentValue: [true, true, false, false, false, true, false]
+        }
+        , MiscGem: {
+            Class: `Gems`
+            , Settings: [
+                {}
+                , {
+                    Classification: `T12`
+                    , Code: {
+                        GemLevel: `>= 20`
+                    }
+                }
+            ]
+            , Code: {
+            
+            }
+            , CurrentValue: 1
         }
         , MiscFlasks: {
             Class: `Flask`
@@ -319,7 +341,7 @@ module.exports = {
                 , {
                     Classification: `T4`
                     , Code: {
-                        StackSize: `> 1`
+                        StackSize: `>= 10`
                     }
                 }
             ]
@@ -1680,7 +1702,7 @@ module.exports = {
                 }
             }
             , KeywordOrder = [
-                `LinkedSockets`, `Sockets`, `StackSize`, `Quality`, `Identified`, `SocketGroup`, `Height`, `Width`, `ElderItem`, `ShaperItem`, `HasInfluence`, `FracturedItem`, `SynthesisedItem`, `ShapedMap`, `BlightedMap`, `MapTier`, `DropLevel`, `Class`, `BaseType`, `Rarity`, `HasExplicitMod`, `AnyEnchantment`, `ItemLevel`
+                `LinkedSockets`, `Sockets`, `StackSize`, `GemLevel`, `Quality`, `Identified`, `SocketGroup`, `Height`, `Width`, `ElderItem`, `ShaperItem`, `HasInfluence`, `FracturedItem`, `SynthesisedItem`, `ShapedMap`, `BlightedMap`, `MapTier`, `DropLevel`, `Class`, `BaseType`, `Rarity`, `HasExplicitMod`, `AnyEnchantment`, `ItemLevel`
                 , `SetFontSize`, `SetTextColor`, `SetBackgroundColor`, `SetBorderColor`, `DisableDropSound`, `PlayAlertSound`, `MinimapIcon`, `PlayEffect`
             ];
         
@@ -2025,6 +2047,7 @@ module.exports = {
         // -- GEM -- \\
         Output += this.Print_Group(`Gems`);
         Output += this.Print_CheckValue(`RecipesGem`);
+        Output += this.Print_CheckValue(`MiscGem`);
     
         // -- MAP -- \\
         //Output += this.Print_CheckValue(`MapFragments`);
@@ -2050,6 +2073,9 @@ module.exports = {
     
         Output += this.Print_CheckValue(`MiscGeneral`);
         
+        Output += `\nHide\n`;
+        Output += `    Class "Currency"\n`;
+        Output += `    StackSize > 1\n`;
         // -- UNSPECIFIED -- \\
         for(let GroupId in UnspecifiedGroups) {
             let GroupName = UnspecifiedGroups[GroupId];
@@ -2057,7 +2083,7 @@ module.exports = {
         }
     
         Output += this.Print_CheckValue(`LeagueIncursion`);
-    
+
         Output += `\nHide\n`;
         Output += `    Class "Gem"\n`;
     
