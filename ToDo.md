@@ -6,7 +6,7 @@
 
 ---
 
-# v0.1.1 - Hotfix 1
+# v0.1.2 - Update for Harvest
 
-* ***Change:*** StackSize for currency adjusted to only override currency set up when at least 10.
-* ***BugFix:*** 21 Gems would not show up (now 20+ will always show, regardless of settings)
+* ***Added:*** Divination Cards for 3.11.
+* ***New:*** Functionality for Harvest items.

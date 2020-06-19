@@ -479,6 +479,38 @@ module.exports = {
             }
             , CurrentValue: 1
         }
+        , LeagueHarvest: {
+            Class: `Harvest Seed`
+            , Settings: [
+                {}
+                , {
+                    Classification: `League`
+                    , Code: {
+                    
+                    }
+                }
+            ]
+            , Code: {
+                //BaseType: `"Metamorph Sample"`
+            }
+            , CurrentValue: 1
+        }
+        , LeagueHarvest2: {
+            Class: `HarvestInfrastructure`
+            , Settings: [
+                {}
+                , {
+                    Classification: `League`
+                    , Code: {
+                    
+                    }
+                }
+            ]
+            , Code: {
+                //BaseType: `"Metamorph Sample"`
+            }
+            , CurrentValue: 1
+        }
         , MapFragments: {
             Class: `Map Fragments`
             , Settings: [
@@ -2023,6 +2055,8 @@ module.exports = {
         }
         Output += this.Print_CheckValue(`LeagueBreach`);
         Output += this.Print_CheckValue(`LeagueMetamorph`);
+        Output += this.Print_CheckValue(`LeagueHarvest`);
+        Output += this.Print_CheckValue(`LeagueHarvest2`);
     
         // -- BASE_ITEMS -- \\
         //Output += this.Print_CheckValue(`BaseElder`);
