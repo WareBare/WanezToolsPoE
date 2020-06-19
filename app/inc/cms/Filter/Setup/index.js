@@ -8,7 +8,7 @@
  */
 
 
-const VERSION_TOOL = `0.1.3 (ALPHA)`;
+const VERSION_TOOL = `0.1.4 (ALPHA)`;
 const VERSION_POE = `3.11.0 (Harvest)`;
 const DATETIME_TOOL = `2020-06-19`;
 
@@ -1603,6 +1603,7 @@ module.exports = {
                 Currency: `Diamond`
                 , Incubator: `UpsideDownHouse`
                 , 'Metamorph Sample': `UpsideDownHouse`
+                , 'Harvest Seed': `UpsideDownHouse`
                 , Card: `Square`
                 , Map: `Triangle`
                 , Fragments: `Triangle`
@@ -1639,6 +1640,13 @@ module.exports = {
                     , SetBorderColor: `225 125 225 {ALPHA}`
                 }
                 , 'Metamorph Sample': {
+                    //SetBackgroundColor: `37 0 37 {ALPHA}`
+                    SetFontSize: `45`
+                    , SetBackgroundColor: `37 0 37 {ALPHA}`
+                    , SetTextColor: `187 187 224 {ALPHA}`
+                    , SetBorderColor: `225 125 225 {ALPHA}`
+                }
+                , 'Harvest Seed': {
                     //SetBackgroundColor: `37 0 37 {ALPHA}`
                     SetFontSize: `45`
                     , SetBackgroundColor: `37 0 37 {ALPHA}`

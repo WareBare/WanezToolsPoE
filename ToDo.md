@@ -6,7 +6,7 @@
 
 ---
 
-# v0.1.3 - Update for Harvest + Hotfix 1
+# v0.1.4 - Update for Harvest + Hotfix 2
 
 * ***Added:*** Divination Cards for 3.11.
 * ***New:*** Functionality for Harvest items.
