@@ -8,9 +8,9 @@
  */
 
 
-const VERSION_TOOL = `0.1.1 (ALPHA)`;
-const VERSION_POE = `3.10.1b (Delirium)`;
-const DATETIME_TOOL = `2020-03-31`;
+const VERSION_TOOL = `0.1.3 (ALPHA)`;
+const VERSION_POE = `3.11.0 (Harvest)`;
+const DATETIME_TOOL = `2020-06-19`;
 
 module.exports = {
     Forms:{},
@@ -481,22 +481,6 @@ module.exports = {
         }
         , LeagueHarvest: {
             Class: `Harvest Seed`
-            , Settings: [
-                {}
-                , {
-                    Classification: `League`
-                    , Code: {
-                    
-                    }
-                }
-            ]
-            , Code: {
-                //BaseType: `"Metamorph Sample"`
-            }
-            , CurrentValue: 1
-        }
-        , LeagueHarvest2: {
-            Class: `HarvestInfrastructure`
             , Settings: [
                 {}
                 , {
@@ -2056,7 +2040,6 @@ module.exports = {
         Output += this.Print_CheckValue(`LeagueBreach`);
         Output += this.Print_CheckValue(`LeagueMetamorph`);
         Output += this.Print_CheckValue(`LeagueHarvest`);
-        Output += this.Print_CheckValue(`LeagueHarvest2`);
     
         // -- BASE_ITEMS -- \\
         //Output += this.Print_CheckValue(`BaseElder`);
