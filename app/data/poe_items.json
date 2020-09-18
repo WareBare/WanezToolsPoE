@@ -67,6 +67,11 @@
             , "Catalyst"
             , "Awakener's Orb"
             , "Delirium Orb"
+            , "Prime Regrading Lens"
+            
+            , "Secondary Regrading Lens"
+            , "Tempering Orb"
+            , "Tailoring Orb"
         ]
     }
     , "Card": {
@@ -450,6 +455,21 @@
             , "The Awakened"
             , "A Familiar Call"
             , "The Long Con"
+            , "The Gulf"
+            
+            , "The Bitter Blossom"
+            , "Triskaidekaphobia"
+            , "Unrequited Love"
+            , "The Cache"
+            , "The Academic"
+            
+            , "Desecrated Virtue"
+            , "Brother's Stash"
+            , "Unchained"
+            , "The Unexpected Prize"
+            , "Cursed Words"
+            
+            , "The Journalist"
         ]
     }
     , "Gems": {
@@ -461,6 +481,8 @@
             , "Portal"
             , "Vaal Breach"
             , "Awakened"
+
+            , "Elemental Penetration"
         ]
     }
     , "Equipment": {

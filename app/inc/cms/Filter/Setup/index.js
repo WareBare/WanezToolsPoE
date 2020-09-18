@@ -8,9 +8,9 @@
  */
 
 
-const VERSION_TOOL = `0.1.4 (ALPHA)`;
-const VERSION_POE = `3.11.0 (Harvest)`;
-const DATETIME_TOOL = `2020-06-19`;
+const VERSION_TOOL = `0.1.5 (ALPHA)`;
+const VERSION_POE = `3.12.0 (Heist)`;
+const DATETIME_TOOL = `2020-09-18`;
 
 module.exports = {
     Forms:{},
@@ -367,6 +367,22 @@ module.exports = {
             }
             , CurrentValue: 1
         }
+        , EquipmentTrinket: {
+            Class: `Equipment`
+            , Settings: [
+                {}
+                , {
+                    Classification: `T12`
+                    , Code: {
+                        Class: `Trinket`
+                    }
+                }
+            ]
+            , Code: {
+            
+            }
+            , CurrentValue: 1
+        }
         , MiscSocketsCount: {
             Class: `Recipe`
             , Settings: [
@@ -511,6 +527,26 @@ module.exports = {
             }
             , CurrentValue: 1
         }
+        , HeistMaps: {
+            Class: `Map`
+            , Settings: [
+                {}
+                , {
+                    Classification: `T12`
+                    , Code: [
+                        {
+                            Class: `"Contract"`
+                        }, {
+                            Class: `"Blueprint"`
+                        }
+                    ]
+                }
+            ]
+            , Code: {
+                //BaseType: `"Metamorph Sample"`
+            }
+            , CurrentValue: 1
+        }
         , MiscGeneral: {
             Class: `League`
             , Settings: [
@@ -563,6 +599,23 @@ module.exports = {
             }
             , CurrentValue: 1
         }
+        , LeagueHeist: {
+            Class: `League`
+            , Settings: [
+                {}
+                , {
+                    Classification: `League`
+                    , Code: {
+                        Class: `"Heist"`
+                    }
+                }
+            ]
+            , Code: {
+                PlayAlertSound: `8 300`
+                , SetFontSize: `45`
+            }
+            , CurrentValue: 1
+        }
         , MiscLevelingGear: {
             Class: `Equipment`
             , Settings: [
@@ -572,28 +625,18 @@ module.exports = {
                     , Code: [
                         {
                             Rarity: `Normal`
-                            , DropLevel: [`> 20`, `< 35`]
+                            , DropLevel: [`> 20`, `< 40`]
                             , ItemLevel: [`> 20`, `< 40`]
                         }
                         , {
                             Rarity: `Rare`
-                            , DropLevel: [`> 20`, `< 35`]
-                            , ItemLevel: [`> 20`, `< 40`]
+                            , DropLevel: [`> 1`, `< 50`]
+                            , ItemLevel: [`> 1`, `< 50`]
                         }
                         , {
                             Rarity: `Rare`
-                            , DropLevel: [`> 30`, `< 45`]
-                            , ItemLevel: [`> 30`, `< 50`]
-                        }
-                        , {
-                            Rarity: `Rare`
-                            , DropLevel: [`> 40`, `< 55`]
-                            , ItemLevel: [`> 40`, `< 60`]
-                        }
-                        , {
-                            Rarity: `Rare`
-                            , DropLevel: [`> 50`, `< 68`]
-                            , ItemLevel: [`> 50`, `< 68`]
+                            , DropLevel: [`> 30`, `< 68`]
+                            , ItemLevel: [`> 45`, `< 68`]
                         }
                         , {
                             Rarity: `>= Magic`
@@ -2048,6 +2091,8 @@ module.exports = {
         Output += this.Print_CheckValue(`LeagueBreach`);
         Output += this.Print_CheckValue(`LeagueMetamorph`);
         Output += this.Print_CheckValue(`LeagueHarvest`);
+        Output += this.Print_CheckValue(`LeagueHeist`);
+        Output += this.Print_CheckValue(`HeistMaps`);
     
         // -- BASE_ITEMS -- \\
         //Output += this.Print_CheckValue(`BaseElder`);
@@ -2080,6 +2125,7 @@ module.exports = {
     
         // -- UNIQUES -- \\
         Output += this.Print_CheckValue(`MiscUniques`);
+        Output += this.Print_CheckValue(`EquipmentTrinket`);
         
         // -- FLASK -- \\
         if(this.Print_CheckBoolean(`MiscFlasks`)) {
