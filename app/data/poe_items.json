@@ -72,6 +72,10 @@
             , "Secondary Regrading Lens"
             , "Tempering Orb"
             , "Tailoring Orb"
+            , "Orb of Unmaking"
+            , "Ritual Vessel"
+            
+            , "Maven's Orb"
         ]
     }
     , "Card": {
@@ -470,6 +474,24 @@
             , "Cursed Words"
             
             , "The Journalist"
+            , "Fateful Meeting"
+            , "Acclimatisation"
+            , "Haunting Shadows"
+            , "The Whiteout"
+            
+            , "Society's Remorse"
+            , "Dying Light"
+            , "The Astromancer"
+            , "Keeper's Corruption"
+            , "Reckless Ambition"
+            
+            , "Love Through Ice"
+            , "Draped in Dreams"
+            , "The Patient"
+            , "The Long Watch"
+            , "The Bear Woman"
+            
+            , "Brotherhood in Exile"
         ]
     }
     , "Gems": {

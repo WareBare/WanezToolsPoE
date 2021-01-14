@@ -8,9 +8,9 @@
  */
 
 
-const VERSION_TOOL = `0.1.5 (ALPHA)`;
-const VERSION_POE = `3.12.0 (Heist)`;
-const DATETIME_TOOL = `2020-09-18`;
+const VERSION_TOOL = `0.1.7 (ALPHA)`;
+const VERSION_POE = `3.13.0 (Ritual)`;
+const DATETIME_TOOL = `2021-01-15`;
 
 module.exports = {
     Forms:{},
@@ -495,22 +495,6 @@ module.exports = {
             }
             , CurrentValue: 1
         }
-        , LeagueHarvest: {
-            Class: `Harvest Seed`
-            , Settings: [
-                {}
-                , {
-                    Classification: `League`
-                    , Code: {
-                    
-                    }
-                }
-            ]
-            , Code: {
-                //BaseType: `"Metamorph Sample"`
-            }
-            , CurrentValue: 1
-        }
         , MapFragments: {
             Class: `Map Fragments`
             , Settings: [
@@ -527,8 +511,42 @@ module.exports = {
             }
             , CurrentValue: 1
         }
+        , AtlasRegionUpgradeItem: {
+            Class: `MapFragments`
+            , Settings: [
+                {}
+                , {
+                    Classification: `T12`
+                    , Code: {
+                    
+                    }
+                }
+            ]
+            , Code: {
+                Class: `"Atlas Region Upgrade Item"`
+                //BaseType: `"Watchstone"`
+            }
+            , CurrentValue: 1
+        }
+        , MiscMapItems: {
+            Class: `MapFragments`
+            , Settings: [
+                {}
+                , {
+                    Classification: `T12`
+                    , Code: {
+                    
+                    }
+                }
+            ]
+            , Code: {
+                Class: `"Misc Map Items"`
+                //BaseType: `"Watchstone"`
+            }
+            , CurrentValue: 1
+        }
         , HeistMaps: {
-            Class: `Map`
+            Class: `MapFragments`
             , Settings: [
                 {}
                 , {
@@ -543,6 +561,7 @@ module.exports = {
                 }
             ]
             , Code: {
+                Class: `Map`
                 //BaseType: `"Metamorph Sample"`
             }
             , CurrentValue: 1
@@ -605,9 +624,14 @@ module.exports = {
                 {}
                 , {
                     Classification: `League`
-                    , Code: {
-                        Class: `"Heist"`
-                    }
+                    , Code: [
+                        {
+                            Class: `"Heist"`
+                        }, {
+                            Class: `"Currency"`
+                            , BaseType: `"Rogue's Marker"`
+                        }
+                    ]
                 }
             ]
             , Code: {
@@ -1650,7 +1674,7 @@ module.exports = {
                 , Card: `Square`
                 , Map: `Triangle`
                 , Fragments: `Triangle`
-                , MapFragments: `Triangle`
+                , MapFragments: `Pentagon`
                 , Equipment: `Star` // not a real class, it will be excluded
                 , Recipe: `Hexagon` // not a real class, it will be excluded
                 , Armor: `Star`
@@ -2090,7 +2114,6 @@ module.exports = {
         }
         Output += this.Print_CheckValue(`LeagueBreach`);
         Output += this.Print_CheckValue(`LeagueMetamorph`);
-        Output += this.Print_CheckValue(`LeagueHarvest`);
         Output += this.Print_CheckValue(`LeagueHeist`);
         Output += this.Print_CheckValue(`HeistMaps`);
     
@@ -2119,7 +2142,9 @@ module.exports = {
         Output += this.Print_CheckValue(`RecipesGem`);
         Output += this.Print_CheckValue(`MiscGem`);
     
-        // -- MAP -- \\
+        // -- MAP -- \\MiscMapItems
+        Output += this.Print_CheckValue(`AtlasRegionUpgradeItem`);
+        Output += this.Print_CheckValue(`MiscMapItems`);
         //Output += this.Print_CheckValue(`MapFragments`);
         Output += this.Print_Map();
     
