@@ -6,9 +6,8 @@
 
 ---
 
-# v0.1.7 - Update for Heist
+# v0.2.0 - Update for Ultimatum
 
-* ***Added:*** Divination Cards for 3.13.
-* ***New:*** Functionality for League items.
-  * Watchstones [Atlas Region Upgrade Item]
-* ***Changed:*** Heist Contracts and Blueprint internal class to make them appear differently.
+* ***Added:*** Divination Cards for 3.14.
+* ***Added:*** Added new base items.
+* ***Note:*** Other items fall into other categories, including the new Reliquary Keys.

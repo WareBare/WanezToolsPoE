@@ -8,9 +8,9 @@
  */
 
 
-const VERSION_TOOL = `0.1.7 (ALPHA)`;
-const VERSION_POE = `3.13.0 (Ritual)`;
-const DATETIME_TOOL = `2021-01-15`;
+const VERSION_TOOL = `0.2.0 (ALPHA)`;
+const VERSION_POE = `3.14.0 (Ultimatum)`;
+const DATETIME_TOOL = `2021-01-18`;
 
 module.exports = {
     Forms:{},
@@ -561,7 +561,7 @@ module.exports = {
                 }
             ]
             , Code: {
-                Class: `Map`
+                //Class: `Contract`
                 //BaseType: `"Metamorph Sample"`
             }
             , CurrentValue: 1

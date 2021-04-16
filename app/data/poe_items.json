@@ -492,6 +492,22 @@
             , "The Bear Woman"
             
             , "Brotherhood in Exile"
+            , "Winter's Embrace"
+            , "Sambodhi's Wisdom"
+            , "The Enthusiasts"
+            , "Broken Promises"
+            
+            , "Brush, Paint and Palette"
+            , "Deadly Joy"
+            , "The Adventuring Spirit"
+            , "The Eternal War"
+            , "Prejudice"
+            
+            , "The Shortcut"
+            , "The Card Sharp"
+            , "A Modest Request"
+            , "Luminous Trove"
+            , "The Hook"
         ]
     }
     , "Gems": {
@@ -521,6 +537,13 @@
             , "Vermillion Ring"
             , "Cerulean Ring"
             , "Convoking Wand"
+            , "Grasping Mail"
+
+            , "Seaglass Amulet"
+            , "Blessed Boots"
+            , "Apothecary's Gloves"
+            , "Artillery Quiver"
+            , "Iolite Ring"
         ]
     }
 }
