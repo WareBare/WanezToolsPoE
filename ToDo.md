@@ -6,8 +6,8 @@
 
 ---
 
-# v0.2.0 - Update for Ultimatum
+# v0.2.1 - Update for Expedition
 
-* ***Added:*** Divination Cards for 3.14.
+* ***Added:*** Divination Cards for 3.15.
 * ***Added:*** Added new base items.
-* ***Note:*** Other items fall into other categories, including the new Reliquary Keys.
+* ***Added:*** New League Items.

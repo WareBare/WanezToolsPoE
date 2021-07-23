@@ -8,7 +8,7 @@
  */
 
 
-const VERSION_TOOL = `0.2.0 (ALPHA)`;
+const VERSION_TOOL = `0.2.1 (ALPHA)`;
 const VERSION_POE = `3.14.0 (Ultimatum)`;
 const DATETIME_TOOL = `2021-01-18`;
 
@@ -630,6 +630,28 @@ module.exports = {
                         }, {
                             Class: `"Currency"`
                             , BaseType: `"Rogue's Marker"`
+                        }
+                    ]
+                }
+            ]
+            , Code: {
+                PlayAlertSound: `8 300`
+                , SetFontSize: `45`
+            }
+            , CurrentValue: 1
+        }
+        , LeagueExpedition: {
+            Class: `League`
+            , Settings: [
+                {}
+                , {
+                    Classification: `League`
+                    , Code: [
+                        {
+                            Class: `"Expedition Logbook"`
+                        }, {
+                            Class: `"Currency"`
+                            , BaseType: `"Circle Artifact" "Scythe Artifact" "Order Artifact" "Sun Artifact"`
                         }
                     ]
                 }
@@ -2116,6 +2138,7 @@ module.exports = {
         Output += this.Print_CheckValue(`LeagueMetamorph`);
         Output += this.Print_CheckValue(`LeagueHeist`);
         Output += this.Print_CheckValue(`HeistMaps`);
+        Output += this.Print_CheckValue(`LeagueExpedition`);
     
         // -- BASE_ITEMS -- \\
         //Output += this.Print_CheckValue(`BaseElder`);

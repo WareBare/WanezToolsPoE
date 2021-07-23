@@ -76,6 +76,13 @@
             , "Ritual Vessel"
             
             , "Maven's Orb"
+            , "Enkindling Orb"
+            , "Instilling Orb"
+            , "Exotic Coinage"
+            , "Scrap Metal"
+            
+            , "Astragali"
+            , "Burial Medallion"
         ]
     }
     , "Card": {
@@ -508,6 +515,21 @@
             , "A Modest Request"
             , "Luminous Trove"
             , "The Hook"
+
+            , "The Last Supper"
+            , "The Emptiness"
+            , "A Sea of Blue"
+            , "The Offspring"
+            , "The Price of Prescience"
+            
+            , "The Mind's Eyes"
+            , "Terrible Secret of Space"
+            , "The Blessing of Moosh"
+            , "Costly Curio"
+            , "Lachrymal Necrosis"
+
+            , "Dementophobia"
+            , "Ambitious Obsession"
         ]
     }
     , "Gems": {
@@ -540,10 +562,21 @@
             , "Grasping Mail"
 
             , "Seaglass Amulet"
-            , "Blessed Boots"
+            , "Fugitive Boots"
             , "Apothecary's Gloves"
             , "Artillery Quiver"
             , "Iolite Ring"
+
+            , "Runic Helm"
+            , "Runic Crest"
+            , "Runic Crown"
+            , "Runic Greaves"
+            , "Runic Sollerets"
+
+            , "Runic Sabatons"
+            , "Runic Gloves"
+            , "Runic Gages"
+            , "Runic Gauntlets"
         ]
     }
 }
