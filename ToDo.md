@@ -6,8 +6,8 @@
 
 ---
 
-# v0.2.1 - Update for Expedition
+# v0.2.1 - Update for Scourge
 
-* ***Added:*** Divination Cards for 3.15.
+* ***Added:*** Divination Cards for 3.16.
 * ***Added:*** Added new base items.
 * ***Added:*** New League Items.

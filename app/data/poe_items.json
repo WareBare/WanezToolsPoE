@@ -83,6 +83,11 @@
             
             , "Astragali"
             , "Burial Medallion"
+            , "Sacred Orb"
+            , "Tainted Blessing"
+            , "Tainted Mythic Orb"
+            
+            , "Tainted Divine Teardrop"
         ]
     }
     , "Card": {
@@ -530,6 +535,21 @@
 
             , "Dementophobia"
             , "Ambitious Obsession"
+            , "Desperate Crusade"
+            , "A Stone Perfected"
+            , "The Rabbit's Foot"
+            
+            , "Chasing Risk"
+            , "The Prince of Darkness"
+            , "The Catch"
+            , "Eternal Bonds"
+            , "Disdain"
+            
+            , "The Scout"
+            , "Guardian's Challenge"
+            , "The Forgotten Treasure"
+            , "The Fox in the Brambles"
+            , "The Aspirant"
         ]
     }
     , "Gems": {
@@ -577,6 +597,7 @@
             , "Runic Gloves"
             , "Runic Gages"
             , "Runic Gauntlets"
+            , "Unset Amulet"
         ]
     }
 }

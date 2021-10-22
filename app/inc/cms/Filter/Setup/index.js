@@ -8,9 +8,9 @@
  */
 
 
-const VERSION_TOOL = `0.2.1 (ALPHA)`;
-const VERSION_POE = `3.14.0 (Ultimatum)`;
-const DATETIME_TOOL = `2021-01-18`;
+const VERSION_TOOL = `0.2.2 (ALPHA)`;
+const VERSION_POE = `3.16.0 (Scourge)`;
+const DATETIME_TOOL = `2021-10-22`;
 
 module.exports = {
     Forms:{},
