@@ -21,7 +21,7 @@
             , "Blessed Orb"
             , "Orb of Binding"
             
-            , "Silver Coin"
+            , "Fossil"
             , "Jeweller's Orb"
             , "Orb of Chance"
             , "Orb of Alteration"
@@ -75,7 +75,7 @@
             , "Orb of Unmaking"
             , "Ritual Vessel"
             
-            , "Maven's Orb"
+            , "Orb of Dominance"
             , "Enkindling Orb"
             , "Instilling Orb"
             , "Exotic Coinage"
@@ -88,6 +88,12 @@
             , "Tainted Mythic Orb"
             
             , "Tainted Divine Teardrop"
+            , "Eldritch Ember"
+            , "Eldritch Ichor"
+            , "Compass"
+            , "Orb of Conflict"
+            
+            , "Scouting Report"
         ]
     }
     , "Card": {
@@ -550,6 +556,22 @@
             , "The Forgotten Treasure"
             , "The Fox in the Brambles"
             , "The Aspirant"
+            
+            , "Judging Voices"
+            , "Bijoux"
+            , "Silence and Frost"
+            , "Misery in Darkness"
+            , "The Tireless Extractor"
+            
+            , "Justified Ambition"
+            , "Parasitic Passengers"
+            , "Duality"
+            , "The One That Got Away"
+            , "The Transformation"
+            
+            , "Magnum Opus"
+            , "Imperfect Memories"
+            , "The Magma Crab"
         ]
     }
     , "Gems": {

@@ -8,9 +8,9 @@
  */
 
 
-const VERSION_TOOL = `0.2.2 (ALPHA)`;
-const VERSION_POE = `3.16.0 (Scourge)`;
-const DATETIME_TOOL = `2021-10-22`;
+const VERSION_TOOL = `0.2.3 (ALPHA)`;
+const VERSION_POE = `3.17.0 (Archnemesis)`;
+const DATETIME_TOOL = `2022-02-04`;
 
 module.exports = {
     Forms:{},
@@ -523,7 +523,7 @@ module.exports = {
                 }
             ]
             , Code: {
-                Class: `"Atlas Region Upgrade Item"`
+                Class: `"Atlas Upgrade Item"`
                 //BaseType: `"Watchstone"`
             }
             , CurrentValue: 1
@@ -630,6 +630,25 @@ module.exports = {
                         }, {
                             Class: `"Currency"`
                             , BaseType: `"Rogue's Marker"`
+                        }
+                    ]
+                }
+            ]
+            , Code: {
+                PlayAlertSound: `8 300`
+                , SetFontSize: `45`
+            }
+            , CurrentValue: 1
+        }
+        , LeagueArchnemesis: {
+            Class: `League`
+            , Settings: [
+                {}
+                , {
+                    Classification: `League`
+                    , Code: [
+                        {
+                            Class: `"Archnemesis"`
                         }
                     ]
                 }
@@ -2137,6 +2156,7 @@ module.exports = {
         Output += this.Print_CheckValue(`LeagueBreach`);
         Output += this.Print_CheckValue(`LeagueMetamorph`);
         Output += this.Print_CheckValue(`LeagueHeist`);
+        Output += this.Print_CheckValue(`LeagueArchnemesis`);
         Output += this.Print_CheckValue(`HeistMaps`);
         Output += this.Print_CheckValue(`LeagueExpedition`);
     
